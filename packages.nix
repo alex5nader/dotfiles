@@ -12,7 +12,7 @@
     vscode git
 
     # system management
-    pciutils glxinfo
+    pciutils glxinfo arandr ripgrep
   ];
 
 
