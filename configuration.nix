@@ -9,7 +9,7 @@
     ./boot.nix
     ./machines/desktop
     ./packages.nix
-    ./users.nix
+    ./users
   ];
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.

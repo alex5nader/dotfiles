@@ -5,19 +5,17 @@
 
   # TODO: apply links fix from https://nixos.wiki/wiki/Discord
   environment.systemPackages = with pkgs; [
-    # general usage
-    firefox discord
-
     # programming
-    vscode git
+    git vscode
 
-    # system management
-    pciutils glxinfo arandr ripgrep
+    # admin
+    pciutils glxinfo ripgrep
   ];
-
 
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "gnome3";
   };
+
+  services.dbus.packages = with pkgs; [ gnome3.dconf ];
 }
