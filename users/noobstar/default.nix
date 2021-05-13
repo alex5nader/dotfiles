@@ -38,20 +38,9 @@ in
 
     # dconf
     dconf.settings =
-      with hm.gvariant;
       let
-        toPath = keybind: "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/" + keybind.name;
-        mkDef = keybind: { ${toPath keybind} = keybind; };
-        paths = lib.lists.map (x: "/" + toPath x + "/") keybinds;
         settings = [
-          (lists.foldr (x: y: x // y) {} (lists.forEach keybinds (keybind: {
-            ${toPath keybind} = keybind;
-          })))
-          {
-            "org/gnome/settings-daemon/plugins/media-keys" = {
-              custom-keybindings = mkArray type.string paths;
-            };
-          }
+          (import ./keybinds.nix { inherit pkgs lib; })
         ];
       in
       lists.foldr lib.recursiveUpdate {} settings;
