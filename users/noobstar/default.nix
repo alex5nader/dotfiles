@@ -19,7 +19,7 @@ in
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
-      firefox discord flameshot
+      firefox discord flameshot obs-studio
 
       # programming
       idea-ultimate clion webstorm pycharm-professional
