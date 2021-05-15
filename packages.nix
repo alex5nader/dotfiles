@@ -13,7 +13,6 @@
     };
   };
 
-  # TODO: apply links fix from https://nixos.wiki/wiki/Discord
   environment.systemPackages = with pkgs; [
     # programming
     git vscode
