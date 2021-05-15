@@ -21,6 +21,9 @@ in
       # general use
       firefox discord flameshot obs-studio peek
 
+      # terminal
+      exa fd sd dust
+
       # programming
       idea-ultimate clion webstorm pycharm-professional
 
@@ -28,8 +31,14 @@ in
       arandr gnome3.dconf-editor
     ];
 
-    # shell
-    programs.fish.enable = true;
+    # terminal
+    programs.fish = {
+      enable = true;
+      functions = import ./fish-functions.nix;
+      shellAliases = {
+        ls = "${pkgs.exa}/bin/exa";
+      };
+    };
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
