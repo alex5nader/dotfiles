@@ -1,7 +1,14 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      discord = pkgs.discord.override {
+        nss = pkgs.nss_latest;
+      };
+    };
+  };
 
   # TODO: apply links fix from https://nixos.wiki/wiki/Discord
   environment.systemPackages = with pkgs; [
