@@ -22,7 +22,7 @@ in
       firefox discord flameshot obs-studio peek
 
       # terminal
-      exa fd sd dust
+      exa fd sd du-dust
 
       # programming
       idea-ultimate clion webstorm pycharm-professional
@@ -53,6 +53,13 @@ in
         ];
       in
       lists.foldr lib.recursiveUpdate {} settings;
+
+
+    # other preferences
+    gtk.gtk3.bookmarks = [
+      "file:///home/noobstar/Projects"
+      "file:///home/noobstar/School"
+    ];
   };
 
 
