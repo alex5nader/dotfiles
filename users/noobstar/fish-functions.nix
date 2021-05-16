@@ -4,10 +4,12 @@
     argumentNames = "project";
     wraps = "cd";
     body = ''
+      set base $HOME/Projects
+
       if test -n "$project"
-        cd $HOME/Projects/$project
+        cd $base/$project
       else
-        cd $HOME/Projects
+        cd $base/Projects
       end
     '';
   };
@@ -16,7 +18,7 @@
     argumentNames = "folder";
     wraps = "cd";
     body = ''
-      set base /data/School
+      set base $HOME/School
 
       if test -z "$folder"
         cd $base
