@@ -1,5 +1,6 @@
 let
   overlays = [
+    ./budgie.nix
     ./discord.nix
     ./unstable.nix
   ];
