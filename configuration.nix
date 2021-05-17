@@ -7,6 +7,7 @@
 {
   imports = [
     ./boot.nix
+    ./apply-overlays.nix
     ./machines/desktop
     ./packages.nix
     ./users
