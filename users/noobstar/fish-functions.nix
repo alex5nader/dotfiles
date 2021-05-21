@@ -9,7 +9,7 @@
       if test -n "$project"
         cd $base/$project
       else
-        cd $base/Projects
+        cd $base
       end
     '';
   };
