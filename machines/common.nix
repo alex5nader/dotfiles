@@ -3,6 +3,9 @@
   hardware.pulseaudio.enable = true;
 
 
+  services.pcscd.enable = true;
+
+
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;

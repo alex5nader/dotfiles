@@ -19,7 +19,7 @@ in
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
-      firefox discord flameshot obs-studio peek
+      firefox discord flameshot obs-studio peek yubioath-desktop
 
       # terminal
       exa fd sd du-dust
