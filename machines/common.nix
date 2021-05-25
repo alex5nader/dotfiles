@@ -1,9 +1,17 @@
+{ pkgs, ... }:
+
 {
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
 
   services.pcscd.enable = true;
+
+
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ mozc ];
+  };
 
 
   services.xserver = {

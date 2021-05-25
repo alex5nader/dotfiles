@@ -49,7 +49,8 @@ in
     dconf.settings =
       let
         settings = [
-          (import ./keybinds.nix { inherit pkgs lib; })
+          (import ./dconf/keybinds.nix { inherit pkgs lib; })
+          (import ./dconf/mozc.nix { inherit lib; })
         ];
       in
       lists.foldr lib.recursiveUpdate {} settings;
