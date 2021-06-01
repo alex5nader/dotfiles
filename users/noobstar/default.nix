@@ -19,7 +19,7 @@ in
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
-      firefox discord yubioath-desktop unstable.obsidian
+      firefox discord yubioath-desktop unstable.obsidian konversation
 
       # media
       flameshot obs-studio peek

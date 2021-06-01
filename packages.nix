@@ -5,7 +5,7 @@
 
   environment.systemPackages = with pkgs; [
     # programming
-    git vscode
+    git vscode openjdk8 unstable.openjdk16
 
     # admin
     pciutils glxinfo ripgrep gnome3.gnome-tweak-tool
