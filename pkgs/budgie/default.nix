@@ -1,6 +1,6 @@
 { callPackage }:
 
 {
-  budgie-desktop = callPackage ./budgie-desktop.nix { };
+  budgie-desktop = callPackage ./budgie-desktop { };
   budgie-screensaver = callPackage ./budgie-screensaver.nix { };
 }
