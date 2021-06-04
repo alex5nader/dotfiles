@@ -21,6 +21,9 @@ in
       # general use
       firefox discord yubioath-desktop unstable.obsidian konversation
 
+      # games
+      multimc
+
       # media
       flameshot obs-studio peek
 
