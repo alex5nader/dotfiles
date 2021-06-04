@@ -29,10 +29,13 @@ in
 
       # programming
       idea-ultimate clion webstorm pycharm-professional
+      gcc rustup python38
 
       # admin
       arandr gnome3.dconf-editor
-    ];
+    ] ++ (with python38Packages; [
+      pip virtualenv
+    ]);
 
     # terminal
     programs.fish = {
