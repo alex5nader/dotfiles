@@ -17,7 +17,7 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    desktopManager.gnome3 = {
+    desktopManager.gnome = {
       enable = true;
       extraGSettingsOverrides = ''
         [org.gnome.desktop.wm.preferences]

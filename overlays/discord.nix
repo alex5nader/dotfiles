@@ -7,6 +7,6 @@ self: super:
       url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
       sha256 = "0pn2qczim79hqk2limgh88fsn93sa8wvana74mpdk5n6x5afkvdd";
     };
-    nss = super.nss_latest;
+    nss = super.nss;
   };
 }
