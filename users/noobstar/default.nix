@@ -16,6 +16,10 @@ in
   };
 
   home-manager.users.noobstar = { lib, pkgs, ...}: with lib; {
+    imports = [
+      ./dconf
+    ];
+
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
@@ -52,17 +56,6 @@ in
       enable = true;
       enableFishIntegration = true;
     };
-
-
-    # dconf
-    dconf.settings =
-      let
-        settings = [
-          (import ./dconf/keybinds.nix { inherit pkgs lib; })
-          (import ./dconf/mozc.nix { inherit lib; })
-        ];
-      in
-      lists.foldr lib.recursiveUpdate {} settings;
 
 
     # other preferences

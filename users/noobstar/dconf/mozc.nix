@@ -1,4 +1,4 @@
-{ lib }:
+{ lib, ... }:
 
 with lib.lists;
 with lib.hm.gvariant;
