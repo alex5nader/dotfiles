@@ -94,7 +94,7 @@ in
           "IPAGothic"
         ];
         monospace = [
-          "Fira Code Retina"
+          "Fira Code"
           "IPAGothic"
         ];
         sansSerif = [
