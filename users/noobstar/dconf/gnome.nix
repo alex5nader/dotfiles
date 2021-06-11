@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
 {
   "org/gnome/desktop/interface" = {
@@ -17,6 +17,10 @@
     switch-applications-backward = [];
     switch-windows = [ "<Alt>Tab" ];
     switch-windows-backward = [ "<Shift><Alt>Tab" ];
+
+    # Switch between workspaces like alt-tab
+    switch-to-workspace-left = [ "<Shift><Super>Tab" ];
+    switch-to-workspace-right = [ "<Super>Tab" ];
   };
 
   "org/gnome/gnome-session" = {
@@ -31,5 +35,25 @@
 
     # Make workspaces include all monitors
     workspaces-only-on-primary = false;
+  };
+
+  "org/gnome/shell" = {
+    # Enable extensions installed via environment.systemPackages
+    disable-user-extensions = false;
+    enabled-extensions = let
+      inherit (lib.lists) map;
+      extensions = import ../../../gnome-extensions.nix pkgs.gnomeExtensions;
+      getUuid = extension:
+        if extension ? uuid
+        then extension.uuid
+        else if extension.passthru ? extensionUuid
+        then extension.passthru.extensionUuid
+        else throw "Extension ${extension} does not have .uuid or .passthru.extensionUuid";
+    in
+      map getUuid extensions;
+  };
+
+  "org/gnome/shell/extensions/user-theme" = {
+    name = "Nordic-Polar";
   };
 }

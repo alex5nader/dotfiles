@@ -14,7 +14,7 @@ in
 
     # admin
     pciutils glxinfo ripgrep gnome3.gnome-tweak-tool
-  ];
+  ] ++ import ./gnome-extensions.nix pkgs.gnomeExtensions;
 
   programs.gnupg.agent = {
     enable = true;
