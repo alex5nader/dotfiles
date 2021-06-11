@@ -4,6 +4,9 @@
   "org/gnome/desktop/interface" = {
     # Disables annoying behaviour when moving mouse into corner of screen
     enable-hot-corners = false;
+
+    # Theming
+    gtk-theme = "Nordic-Polar";
   };
 
   "org/gnome/desktop/wm/keybindings" = {

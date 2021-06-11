@@ -18,6 +18,7 @@ in
   home-manager.users.noobstar = { lib, pkgs, ...}: with lib; {
     imports = [
       ./dconf
+      # ./gnome-terminal.nix
     ];
 
     # packages
@@ -37,6 +38,9 @@ in
       # programming
       idea-ultimate clion webstorm pycharm-professional
       gcc rustup python38
+
+      # theme
+      nordic-polar papirus-icon-theme
 
       # admin
       arandr gnome3.dconf-editor
