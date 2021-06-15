@@ -25,7 +25,7 @@
         return 0
       end
 
-      switch (date | cut -d' ' -f3)
+      switch (date +%b)
       case Aug Sep Oct Nov Dec
         set semester "Fall"
       case Jan Feb Mar Apr May
