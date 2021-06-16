@@ -18,6 +18,7 @@ in
   home-manager.users.noobstar = { lib, pkgs, ...}: with lib; {
     imports = [
       ./dconf
+      ./fish-functions
       # ./gnome-terminal.nix
     ];
 
@@ -51,7 +52,6 @@ in
     # terminal
     programs.fish = {
       enable = true;
-      functions = import ./fish-functions.nix;
       shellAliases = {
         ls = "${pkgs.exa}/bin/exa";
       };
