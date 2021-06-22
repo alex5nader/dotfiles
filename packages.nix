@@ -13,7 +13,7 @@ in
     git vscode jdk8 jdk16
 
     # admin
-    pciutils glxinfo ripgrep gnome3.gnome-tweak-tool
+    pciutils glxinfo ripgrep gnome.gnome-tweak-tool
   ] ++ import ./gnome-extensions.nix pkgs.gnomeExtensions;
 
   programs.gnupg.agent = {
@@ -23,7 +23,7 @@ in
 
   programs.steam.enable = true;
 
-  services.dbus.packages = with pkgs; [ gnome3.dconf ];
+  services.dbus.packages = with pkgs; [ gnome.dconf ];
 
 
   environment.etc = {

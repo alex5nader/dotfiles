@@ -5,7 +5,7 @@ with lib;
 let 
   xcfg = config.services.xserver;
   cfg = xcfg.desktopManager.budgie;
-  gnome3 = pkgs.gnome3;
+  gnome = pkgs.gnome;
 in
 {
   options = {
@@ -16,8 +16,8 @@ in
     security.polkit.enable = true;
     services.udisks2.enable = true;
     services.gvfs.enable = true;
-    services.gnome3.sushi.enable = mkDefault true;
-    services.gnome3.tracker.enable = mkDefault true;
+    services.gnome.sushi.enable = mkDefault true;
+    services.gnome.tracker.enable = mkDefault true;
     hardware.pulseaudio.enable = mkDefault true;
     services.telepathy.enable = mkDefault true;
     networking.networkmanager.enable = mkDefault true;
@@ -45,7 +45,7 @@ in
     };
 
 
-    environment.systemPackages = with gnome3; [
+    environment.systemPackages = with gnome; [
       pkgs.budgie.budgie-desktop pkgs.arc-theme pkgs.moka-icon-theme
       pkgs.desktop_file_utils pkgs.ibus pkgs.shared_mime_info glib gtk3
       glib_networking gvfs dconf gnome-backgrounds gnome_control_center
@@ -53,7 +53,7 @@ in
       pkgs.hicolor_icon_theme empathy eog epiphany evince nautilus totem
       gnome-calculator gnome-screenshot gnome-system-monitor gnome_terminal
       file-roller gedit
-      gnome3.networkmanagerapplet pkgs.budgie.budgie-screensaver gnome3.gnome-session ];
+      networkmanagerapplet pkgs.budgie.budgie-screensaver gnome.gnome-session ];
 
     environment.pathsToLink = [ "/share" ];
   };

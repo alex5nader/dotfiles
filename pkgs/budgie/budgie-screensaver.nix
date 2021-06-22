@@ -11,5 +11,5 @@ stdenv.mkDerivation rec {
   };
   
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ intltool glib x11 gtk3-x11 gnome3.gnome-desktop gsettings_desktop_schemas dbus-glib linux-pam ];
+  buildInputs = [ intltool glib x11 gtk3-x11 gnome.gnome-desktop gsettings_desktop_schemas dbus-glib linux-pam ];
 }

@@ -8,7 +8,7 @@ let
     {
       name = "open-terminal";
       binding = "<Super>Return";
-      command = "${pkgs.gnome3.gnome-terminal}/bin/gnome-terminal";
+      command = "${pkgs.gnome.gnome-terminal}/bin/gnome-terminal";
     }
     {
       name = "trigger-flameshot";

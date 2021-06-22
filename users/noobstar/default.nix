@@ -44,7 +44,7 @@ in
       nordic-polar papirus-icon-theme
 
       # admin
-      arandr gnome3.dconf-editor
+      arandr gnome.dconf-editor
     ] ++ (with python38Packages; [
       pip virtualenv
     ]);

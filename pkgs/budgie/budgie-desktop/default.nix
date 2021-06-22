@@ -48,20 +48,20 @@ stdenv.mkDerivation rec {
     alsaLib                       # alsa-lib
     # gio-2.0                     # included in glib
     # gio-unix-2.0                # included in glib
-    gnome3.gnome-bluetooth        # gnome-bluetooth-1.0
-    gnome3.gnome-desktop          # gnome-desktop-3.0  
-    gnome3.gnome-settings-daemon  # gnome-settings-daemon
+    gnome.gnome-bluetooth         # gnome-bluetooth-1.0
+    gnome.gnome-desktop           # gnome-desktop-3.0
+    gnome.gnome-settings-daemon   # gnome-settings-daemon
     # gobject-2.0                 # included in glib
     gobjectIntrospection          # gobject-introspection
     gtk3-x11                      # gtk+-3.0
     ibus                          # ibus-1.0
     gnome-menus                   # libgnome-menu-3.0
     libnotify                     # libnotify
-    gnome3.libpeas                # libpeas-gtk-1.0
+    gnome.libpeas                 # libpeas-gtk-1.0
     libpulseaudio                 # libpulse
     libwnck3                      # libwnck
     # meson                       # meson under nativeBuildInputs
-    gnome3.mutter                 # mutter
+    gnome.mutter                  # mutter
     # polkit-agent-1              # included in polkit
     # polkit-gobject-1            # included in polkit
     upower                        # upower-glib
