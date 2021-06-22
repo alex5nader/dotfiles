@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
   # dependencies taken from https://github.com/solus-project/budgie-desktop/wiki/Building-Budgie-Desktop
   nativeBuildInputs = [
     # from wiki
-    # gtk_doc                       # gtk-doc -- disabled because idk how to fix it
+    # gtk_doc                     # gtk-doc -- disabled because idk how to fix it
     meson                         # meson
     sassc                         # sassc
     vala                          # vala
@@ -42,6 +42,7 @@ stdenv.mkDerivation rec {
     ninja                         # only present in dependency install commands
     desktop-file-utils            # provides update-desktop-database which is used in meson_post_install.sh
     makeWrapper                   # replaces env vars with ones to /nix/store
+    git                           # idk if it's needed but meson/ninja mentions it can't find it
   ];
   buildInputs = [
     accountsservice               # accountsservice
@@ -61,7 +62,7 @@ stdenv.mkDerivation rec {
     libpulseaudio                 # libpulse
     libwnck3                      # libwnck
     # meson                       # meson under nativeBuildInputs
-    gnome.mutter                  # mutter
+    gnome.mutter                        # mutter
     # polkit-agent-1              # included in polkit
     # polkit-gobject-1            # included in polkit
     upower                        # upower-glib
@@ -71,5 +72,6 @@ stdenv.mkDerivation rec {
     budgie.budgie-screensaver     # just not listed for some reason
     glib                          # provides gio-2.0, gio-unix-2.0, gobject-2.0
     polkit                        # provides polkit-agent-1, polkit-gobject-1
+    mesa                          # needed to provide EGL/eglmesaext.h for mutter
   ];
 }
