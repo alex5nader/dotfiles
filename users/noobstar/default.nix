@@ -25,7 +25,7 @@ in
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
-      firefox discord yubioath-desktop unstable.obsidian konversation libreoffice
+      firefox discord yubioath-desktop unstable.obsidian konversation libreoffice signal-desktop
 
       # games
       multimc
