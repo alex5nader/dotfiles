@@ -25,24 +25,7 @@ in
     hardware.bluetooth.enable = mkDefault true;
 
 
-    services.xserver.desktopManager.session = singleton {
-      name = "budgie";
-      bgSupport = true;
-      start = ''
-        # # Set GTK_DATA_PREFIX so that GTK+ can find the themes
-        # export GTK_DATA_PREFIX=${config.system.path}
-        # # find theme engines
-        # export GTK_PATH=${config.system.path}/lib/gtk-3.0:${config.system.path}/lib/gtk-2.0
-        # # Let nautilus find extensions
-        # export NAUTILUS_EXTENSION_DIR=${config.system.path}/lib/nautilus/extensions-3.0/
-        # # Find the mouse
-        # export XCURSOR_PATH=~/.icons:${config.system.path}/share/icons
-        # # Update user dirs as described in http://freedesktop.org/wiki/Software/xdg-user-dirs/
-        # ${pkgs.xdg-user-dirs}/bin/xdg-user-dirs-update
-        ${pkgs.budgie.budgie-desktop}/bin/budgie-desktop &
-        waitPID=$!
-      '';
-    };
+    services.xserver.displayManager.sessionPackages = [ pkgs.budgie.budgie-desktop ];
 
 
     environment.systemPackages = with gnome; [

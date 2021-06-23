@@ -20,6 +20,10 @@ stdenv.mkDerivation rec {
     sha256 = "878f4e6460c29740bf633c3b11ba97bcb788068c1460f82569938af2f1633b25";
   };
 
+  passthru = {
+    providedSessions = [ "budgie-desktop" ];
+  };
+
   patches = [
     ./add-missing-giounix-deps.patch # PR this eventually
   ]; 
