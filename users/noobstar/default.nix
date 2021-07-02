@@ -62,6 +62,17 @@ in
     };
 
 
+    # editors
+    programs.vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        bbenoist.Nix arrterian.nix-env-selector
+        editorconfig.editorconfig
+        ms-vscode.cpptools
+      ];
+    };
+
+
     # other preferences
     gtk.gtk3.bookmarks = [
       "file:///home/noobstar/Projects"

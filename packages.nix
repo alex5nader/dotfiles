@@ -10,7 +10,7 @@ in
 
   environment.systemPackages = with pkgs; [
     # programming
-    git vscode jdk8 jdk16
+    git jdk8 jdk16
 
     # admin
     pciutils glxinfo ripgrep gnome.gnome-tweak-tool
