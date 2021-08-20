@@ -8,6 +8,7 @@ let
     ./gnome.nix
     ./keybinds.nix
     ./mozc.nix
+    ./wallpaper.nix
   ];
   settings = map (x: import x { inherit pkgs lib; }) files;
 in

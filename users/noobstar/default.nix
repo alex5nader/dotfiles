@@ -37,7 +37,7 @@ in
       exa fd sd du-dust
 
       # programming
-      idea-ultimate clion webstorm pycharm-professional
+      idea-ultimate clion webstorm pycharm-professional datagrip mongodb-compass
       gcc rustup python38
 
       # theme
@@ -70,6 +70,21 @@ in
         editorconfig.editorconfig
         ms-vscode.cpptools
       ];
+    };
+
+    home.file = {
+      # fixes intellij gradle sync failure
+      gradle-properties = {
+        text = ''
+          org.gradle.java.home=${pkgs.openjdk16}/lib/openjdk
+        '';
+        target = ".gradle/gradle.properties";
+      };
+
+      wallpaper = {
+        source = ./wallpaper.png;
+        target = ".background-image";
+      };
     };
 
 

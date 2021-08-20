@@ -2,6 +2,7 @@
 
 let
   jdk8 = pkgs.openjdk8;
+  jdk11 = pkgs.openjdk11;
   jdk16 = pkgs.unstable.openjdk16;
 in
 
@@ -28,6 +29,7 @@ in
 
   environment.etc = {
     "jdk8".source = jdk8;
+    "jdk11".source = jdk11;
     "jdk16".source = jdk16;
   };
 }

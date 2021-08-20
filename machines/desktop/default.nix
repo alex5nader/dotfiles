@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ../common.nix
     ./hardware.nix
+    ./virtualisation.nix
   ];
 
 
@@ -21,7 +22,10 @@
   
 
   # Display stuff
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidia_x11_beta;
+    modesetting.enable = true;
+  };
   services.xserver = {
     videoDrivers = [ "nvidia" ];
     # must keep in sync with monitors.xml!!!

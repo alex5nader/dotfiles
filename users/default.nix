@@ -7,4 +7,6 @@
   ];
 
   home-manager.useGlobalPkgs = true;
+
+  services.xserver.desktopManager.wallpaper.mode = "max";
 }
