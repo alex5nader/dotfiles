@@ -25,13 +25,13 @@ in
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
-      firefox discord yubioath-desktop unstable.obsidian konversation libreoffice signal-desktop
+      firefox discord yubioath-desktop obsidian konversation libreoffice signal-desktop teams anki
 
       # games
       multimc
 
       # media
-      flameshot obs-studio peek
+      flameshot obs-studio peek aseprite-unfree
 
       # terminal
       exa fd sd du-dust

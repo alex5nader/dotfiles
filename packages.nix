@@ -13,6 +13,9 @@ in
     # programming
     git jdk8 jdk16
 
+    # misc
+    libimobiledevice
+
     # admin
     pciutils glxinfo ripgrep gnome.gnome-tweak-tool
   ] ++ import ./gnome-extensions.nix pkgs.gnomeExtensions;
