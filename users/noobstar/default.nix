@@ -76,7 +76,7 @@ in
       # fixes intellij gradle sync failure
       gradle-properties = {
         text = ''
-          org.gradle.java.home=${pkgs.openjdk16}/lib/openjdk
+          org.gradle.java.home=${pkgs.unstable.openjdk16}/lib/openjdk
         '';
         target = ".gradle/gradle.properties";
       };

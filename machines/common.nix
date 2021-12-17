@@ -24,7 +24,7 @@
         button-layout = ":minimize,maximize,close"
       '';
     };
-    desktopManager.budgie.enable = true;
+    # desktopManager.budgie.enable = true;
   };
 
 
