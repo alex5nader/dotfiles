@@ -28,7 +28,7 @@ in
       firefox discord yubioath-desktop obsidian konversation libreoffice signal-desktop teams anki
 
       # games
-      multimc
+      multimc mgba warp-randomizer
 
       # media
       flameshot obs-studio peek aseprite-unfree

@@ -6,6 +6,7 @@ let
     ./steam.nix
     ./unstable.nix
     ./vscode-extensions.nix
+    ./warp-randomizer.nix
   ];
 in
 map import overlays
