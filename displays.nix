@@ -1,15 +1,19 @@
-{ config, lib, pkgs, ... }:
+{ config, currentDevice, lib, pkgs, ... }:
 
-{
-  device-config.laptop = {
+let
+  inherit (lib) mkIf mkMerge;
+in
+
+mkMerge [
+  (mkIf (currentDevice == "laptop") {
     services.xserver.desktopManager.gnome.extraGSettingsOverrides =
       lib.mkIf config.services.xserver.desktopManager.gnome.enabled ''
         [org.gnome.desktop.interface]
         text-scaling-factor = 1.5
       '';
-  };
+  })
 
-  device-config.desktop = {
+  (mkIf (currentDevice == "desktop") {
     hardware.nvidia = {
       package = config.boot.kernelPackages.nvidia_x11_beta;
       modesetting.enable = true;
@@ -36,5 +40,5 @@
         }
       ];
     };
-  };
-}
+  })
+]

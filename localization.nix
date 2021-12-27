@@ -1,5 +1,11 @@
-{
-  device-config.desktop = {
+{ currentDevice, lib, ... }:
+
+let
+  inherit (lib) mkIf mkMerge;
+in
+
+mkMerge [
+  (mkIf (currentDevice == "laptop") {
     time.timeZone = "America/Chicago";
 
     i18n.defaultLocale = "en_US.UTF-8";
@@ -8,9 +14,9 @@
       font = "Lat2-Terminus16";
       keyMap = "us";
     };
-  };
-
-  device-config.laptop = {
+  })
+  
+  (mkIf (currentDevice == "desktop") {
     time.timeZone = "America/Chicago";
 
     i18n.defaultLocale = "en_US.UTF-8";
@@ -19,5 +25,5 @@
       font = "Lat2-Terminus16";
       keyMap = "us";
     };
-  };
-}
+  })
+]

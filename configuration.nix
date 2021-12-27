@@ -1,10 +1,7 @@
 {
   imports = [
-    ./device-support.nix
-
     ./apply-overlays.nix
     ./boot.nix
-    ./device-support.nix
     ./displays.nix
     ./drives.nix
     ./fonts.nix
@@ -19,5 +16,5 @@
     ./vpn.nix
   ];
 
-  current-device = "laptop";
+  _module.args.currentDevice = "laptop";
 }
