@@ -7,7 +7,7 @@ in
 mkMerge [
   (mkIf (currentDevice == "laptop") {
     services.xserver.desktopManager.gnome.extraGSettingsOverrides =
-      lib.mkIf config.services.xserver.desktopManager.gnome.enabled ''
+      mkIf config.services.xserver.desktopManager.gnome.enable ''
         [org.gnome.desktop.interface]
         text-scaling-factor = 1.5
       '';

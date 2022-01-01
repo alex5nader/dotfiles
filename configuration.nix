@@ -1,5 +1,8 @@
 {
   imports = [
+    ./gnome
+    ./programs
+
     ./apply-overlays.nix
     ./boot.nix
     ./displays.nix
