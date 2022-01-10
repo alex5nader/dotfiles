@@ -25,7 +25,7 @@ in
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
-      firefox discord yubioath-desktop obsidian konversation libreoffice signal-desktop teams anki
+      firefox discord yubioath-desktop obsidian konversation libreoffice signal-desktop teams anki unstable.electron-mail
 
       # games
       multimc mgba warp-randomizer
@@ -76,7 +76,7 @@ in
       # fixes intellij gradle sync failure
       gradle-properties = {
         text = ''
-          org.gradle.java.home=${pkgs.unstable.openjdk16}/lib/openjdk
+          org.gradle.java.home=${pkgs.unstable.adoptopenjdk-hotspot-bin-16}/lib/openjdk
         '';
         target = ".gradle/gradle.properties";
       };

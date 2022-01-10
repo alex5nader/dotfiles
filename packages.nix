@@ -3,7 +3,7 @@
 let
   jdk8 = pkgs.openjdk8;
   jdk11 = pkgs.openjdk11;
-  jdk16 = pkgs.unstable.openjdk16;
+  jdk16 = pkgs.unstable.adoptopenjdk-hotspot-bin-16;
 in
 
 {
