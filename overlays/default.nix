@@ -1,8 +1,9 @@
-let
-  overlays = [
-    ./steam.nix
-    ./vscode-extensions.nix
-    ./warp-randomizer.nix
-  ];
-in
-map import overlays
+jdks:
+
+[
+  (import ./jdks.nix jdks)
+  (import ./steam.nix)
+  (import ./unstable.nix)
+  (import ./vscode-extensions.nix)
+  (import ./warp-randomizer.nix)
+]

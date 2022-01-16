@@ -1,6 +1,5 @@
 {
   imports = [
-    ./gnome
     ./programs
 
     ./apply-overlays.nix
@@ -8,6 +7,7 @@
     ./displays.nix
     ./drives.nix
     ./fonts.nix
+    ./gnome.nix
     ./ime.nix
     ./internet.nix
     ./kernel.nix
