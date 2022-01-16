@@ -42,7 +42,7 @@
     disable-user-extensions = false;
     enabled-extensions = let
       inherit (lib.lists) map;
-      extensions = import ./extensions.nix pkgs.gnomeExtensions;
+      extensions = import ../../extensions.nix pkgs;
       getUuid = extension:
         if extension ? uuid
         then extension.uuid
