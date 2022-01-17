@@ -8,7 +8,6 @@
     ./drives.nix
     ./fonts.nix
     ./gnome.nix
-    ./ime.nix
     ./internet.nix
     ./kernel.nix
     ./localization.nix
