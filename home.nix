@@ -1,12 +1,13 @@
 {
   imports = [
-    ./dconf
     ./fish-functions
+    ./flameshot
+    ./gnome
+    ./ime
+    ./keybinds
     ./wallpaper
 
     ./file-manager.nix
-    ./gnome-extensions.nix
-    ./gnome-terminal.nix
     ./gradle.nix
     ./metadata.nix
     ./programs.nix

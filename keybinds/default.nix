@@ -4,19 +4,7 @@ with lib;
 with hm.gvariant;
 
 let
-  keybindings = [
-    {
-      name = "open-terminal";
-      binding = "<Super>Return";
-      command = "${pkgs.gnome.gnome-terminal}/bin/gnome-terminal";
-    }
-    {
-      name = "trigger-flameshot";
-      binding = "<Super><Shift>s";
-      command = "${pkgs.flameshot}/bin/flameshot gui";
-    }
-  ];
-
+  keybindings = import ./keybinds.nix pkgs;
 
   getPath = keybinding: "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/" + keybinding.name;
 
@@ -30,4 +18,7 @@ let
     };
   };
 in
-recursiveUpdate pathsEntry keybindingEntries
+
+{
+  dconf.settings = recursiveUpdate pathsEntry keybindingEntries;
+}

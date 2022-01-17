@@ -8,20 +8,6 @@
 
   programs.firefox.enable = true;
 
-  services.flameshot.enable = true;
-
-  programs.home-manager.enable = true;
-
-  programs.vscode = {
-    enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
-      arrterian.nix-env-selector
-      editorconfig.editorconfig
-      ms-vscode.cpptools
-    ];
-  };
-
   programs.git = {
     enable = true;
 
@@ -38,6 +24,17 @@
     };
   };
 
+  programs.home-manager.enable = true;
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      bbenoist.nix
+      arrterian.nix-env-selector
+      editorconfig.editorconfig
+      ms-vscode.cpptools
+    ];
+  };
 
   home.packages = with pkgs; with jetbrains; [
     # general use
@@ -51,7 +48,7 @@
     obs-studio peek aseprite-unfree
 
     # terminal
-    fd sd du-dust
+    fd sd du-dust unzip
 
     # programming
     idea-ultimate clion webstorm pycharm-professional
