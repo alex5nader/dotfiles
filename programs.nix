@@ -39,13 +39,14 @@
   home.packages = with pkgs; with jetbrains; [
     # general use
     discord yubioath-desktop obsidian konversation libreoffice
-    signal-desktop teams anki unstable.electron-mail
+    signal-desktop teams anki unstable.electron-mail zoom-us
+    qbittorrent teams
 
     # games
     multimc mgba warp-randomizer
 
     # media
-    obs-studio peek aseprite-unfree
+    obs-studio peek aseprite-unfree vlc
 
     # terminal
     fd sd du-dust unzip
