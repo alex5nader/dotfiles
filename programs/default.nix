@@ -12,7 +12,7 @@
 
     libimobiledevice
 
-    pciutils glxinfo ripgrep gnome.gnome-tweak-tool
+    pciutils glxinfo ripgrep gnome.gnome-tweak-tool file
   ];
 
   programs.gnupg.agent.enable = true;

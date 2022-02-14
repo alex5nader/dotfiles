@@ -1,5 +1,6 @@
 {
   imports = [
+    ./options
     ./programs
 
     ./apply-overlays.nix
@@ -13,8 +14,10 @@
     ./localization.nix
     ./metadata.nix
     ./misc-hardware.nix
+    ./printing.nix
     ./sound.nix
     ./users.nix
+    ./virtualisation.nix
     ./vpn.nix
   ];
 

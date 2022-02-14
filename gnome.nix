@@ -11,6 +11,8 @@
         button-layout = ":minimize,maximize,close"
       '';
     };
+
+    desktopManager.budgie.enable = true;
   };
 
   programs.gnupg.agent.pinentryFlavor = "gnome3";
