@@ -1,6 +1,5 @@
 {
   imports = [
-    ./fish-functions
     ./flameshot
     ./gnome
     ./ime

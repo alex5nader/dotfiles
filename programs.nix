@@ -33,14 +33,20 @@
       arrterian.nix-env-selector
       editorconfig.editorconfig
       ms-vscode.cpptools
-    ];
+      skyapps.fish-vscode
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+      name = "VerilogHDL";
+      publisher = "mshr-h";
+      version = "1.5.3";
+      sha256 = "1har7q0flqnx5q74nj3gn8l80aibmnn4xyscddbim5i5yqdx45g0";
+    }];
   };
 
   home.packages = with pkgs; with jetbrains; [
     # general use
     discord yubioath-desktop obsidian konversation libreoffice
     signal-desktop teams anki unstable.electron-mail zoom-us
-    qbittorrent teams
+    qbittorrent teams remmina
 
     # games
     multimc mgba warp-randomizer
@@ -53,7 +59,7 @@
 
     # programming
     idea-ultimate clion webstorm pycharm-professional
-    datagrip mongodb-compass gcc rustup python38
+    datagrip mongodb-compass gcc rustup python38 verilog
 
     # theme
     nordic papirus-icon-theme
