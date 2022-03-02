@@ -21,6 +21,7 @@
 
     extraConfig = {
       init.defaultBranch = "main";
+      core.editor = "nano";
     };
   };
 
@@ -60,6 +61,7 @@
     # programming
     idea-ultimate clion webstorm pycharm-professional
     datagrip mongodb-compass gcc rustup python38 verilog
+    logisim
 
     # theme
     nordic papirus-icon-theme
