@@ -61,7 +61,7 @@
     # programming
     idea-ultimate clion webstorm pycharm-professional
     datagrip mongodb-compass gcc rustup python38 verilog
-    logisim
+    logisim gnumake
 
     # theme
     nordic papirus-icon-theme
