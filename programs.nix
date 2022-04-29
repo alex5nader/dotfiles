@@ -53,7 +53,7 @@
     multimc mgba warp-randomizer
 
     # media
-    obs-studio peek aseprite-unfree vlc
+    obs-studio peek aseprite-unfree vlc audacity
 
     # terminal
     fd sd du-dust unzip
