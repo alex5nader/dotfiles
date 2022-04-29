@@ -25,23 +25,23 @@ in
     # packages
     home.packages = with pkgs; with jetbrains; [
       # general use
-      firefox discord yubioath-desktop obsidian konversation libreoffice signal-desktop teams anki unstable.electron-mail
+      firefox discord yubioath-desktop obsidian konversation libreoffice signal-desktop teams anki unstable.electron-mail qbittorrent
 
       # games
       multimc mgba warp-randomizer
 
       # media
-      flameshot obs-studio peek aseprite-unfree
+      flameshot obs-studio peek aseprite-unfree vlc
 
       # terminal
       exa fd sd du-dust
 
       # programming
       idea-ultimate clion webstorm pycharm-professional datagrip mongodb-compass
-      gcc rustup python38
+      gcc rustup python38 verilog
 
       # theme
-      nordic-polar papirus-icon-theme
+      nordic papirus-icon-theme
 
       # admin
       arandr gnome.dconf-editor
@@ -66,7 +66,7 @@ in
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
-        bbenoist.Nix arrterian.nix-env-selector
+        bbenoist.nix arrterian.nix-env-selector
         editorconfig.editorconfig
         ms-vscode.cpptools
       ];

@@ -9,7 +9,7 @@
   };
 
   environment = {
-    systemPackages = [ pkgs.virt-manager ];
+    systemPackages = with pkgs; [ virt-manager spice-gtk ];
     etc = {
       "libvirt/hooks/kvm.conf" = {
         text = ''
