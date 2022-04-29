@@ -2,7 +2,7 @@
 
 {
   fonts = {
-    enableDefaultFonts = false;
+    enableDefaultFonts = false; # TODO: go back to default fonts, twemoji don't work anyway
     fonts = with pkgs; [
       # sans & serif
       ttf_bitstream_vera liberation_ttf

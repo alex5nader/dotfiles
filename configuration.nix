@@ -21,5 +21,5 @@
     ./vpn.nix
   ];
 
-  _module.args.currentDevice = "laptop";
+  _module.args.currentDevice = "desktop";
 }

@@ -1,6 +1,7 @@
 jdks:
 
 [
+  (import ./arcmenu.nix)
   (import ./budgie.nix)
   (import ./jdks.nix jdks)
   (import ./steam.nix)
