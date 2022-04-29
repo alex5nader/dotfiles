@@ -53,5 +53,5 @@ in
     };
   };
 
-  programs.starship.enable = true;
+  programs.starship.enable = true; # TODO: why don't I need enableFishIntegration? does any-nix-shell cover it somehow?
 }

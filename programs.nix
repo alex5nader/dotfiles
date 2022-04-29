@@ -1,3 +1,5 @@
+# TODO: convert to directory module & combine with flameshot directory
+
 { pkgs, ... }:
 
 {

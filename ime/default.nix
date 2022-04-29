@@ -18,7 +18,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/input-sources" = {
       sources = map mkTuple [
         [ "xkb" "us" ]
-        [ "ibus" "mozc-jp" ]
+        [ "ibus" "mozc-jp" ] # TODO: why is this ibus? current config uses fcitx5
       ];
     };
     "org/gnome/desktop/interface" = {

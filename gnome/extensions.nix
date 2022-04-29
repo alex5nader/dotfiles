@@ -8,7 +8,7 @@ in
 with extensions;
 
 [
-  unstable.arcmenu user-themes appindicator workspace-switch-wraparound
+  arcmenu-27 user-themes appindicator workspace-switch-wraparound
   no-overview
-  dash-to-panel # not working on gnome 40 yet
+  dash-to-panel
 ]
