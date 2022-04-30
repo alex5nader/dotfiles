@@ -1,0 +1,27 @@
+diff --git a/splatnet2statink.py b/splatnet2statink.py
+index c60bd14..6edab78 100755
+--- a/splatnet2statink.py
++++ b/splatnet2statink.py
+@@ -22,18 +22,16 @@ try:
+ except ModuleNotFoundError as e:
+ 	version = None
+ from subprocess import call
++from appdirs import user_data_dir
+ # PIL/Pillow imported at bottom
+ 
+ A_VERSION = "1.7.1"
+ 
+ print("splatnet2statink v{}".format(A_VERSION))
+ 
+-# place config.txt in same directory as script (bundled or not)
+-if getattr(sys, 'frozen', False):
+-	app_path = os.path.dirname(sys.executable)
+-elif __file__:
+-	app_path = os.path.dirname(__file__)
+-config_path = os.path.join(app_path, "config.txt")
++config_dir = user_data_dir("splatnet2statink", "splatnet2statink")
++os.makedirs(config_dir, exist_ok=True)
++config_path = os.path.join(config_dir, "config.txt")
+ 
+ try:
+ 	config_file = open(config_path, "r")

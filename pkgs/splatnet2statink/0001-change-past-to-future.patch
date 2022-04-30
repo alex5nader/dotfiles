@@ -1,0 +1,13 @@
+diff --git a/splatnet2statink.py b/splatnet2statink.py
+index 76bc2d3..c60bd14 100755
+--- a/splatnet2statink.py
++++ b/splatnet2statink.py
+@@ -10,7 +10,7 @@ from builtins import input
+ from builtins import zip
+ from builtins import str
+ from builtins import range
+-from past.utils import old_div
++from future.utils import old_div
+ import os.path, argparse, sys
+ import requests, json, time, datetime, random, re
+ import msgpack, uuid
