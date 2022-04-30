@@ -1,15 +1,14 @@
 {
   imports = [
-    ./flameshot
     ./gnome
     ./ime
     ./keybinds
+    ./programs
     ./wallpaper
 
     ./file-manager.nix
     ./gradle.nix
     ./metadata.nix
-    ./programs.nix
     ./shell.nix
     ./tray-target.nix
   ];

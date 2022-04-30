@@ -1,8 +1,13 @@
-# TODO: convert to directory module & combine with flameshot directory
-
 { pkgs, ... }:
 
 {
+  imports = [
+    ./flameshot
+
+    ./splatnet2statink.nix
+  ];
+
+
   programs.exa = {
     enable = true;
     enableAliases = true;
