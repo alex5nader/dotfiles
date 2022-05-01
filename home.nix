@@ -12,4 +12,6 @@
     ./shell.nix
     ./tray-target.nix
   ];
+
+  _module.args.currentDevice = import ./current-device.nix; # This should be a file that evaluates to a string "desktop" or "laptop"
 }
