@@ -9,6 +9,17 @@ with lib.hm.gvariant;
     fcitx5.addons = with pkgs; [ fcitx5-mozc fcitx5-gtk libsForQt5.fcitx5-qt ];
   };
 
+  home.file = {
+    fcitx-config = {
+      source = ./fcitx-config;
+      target = ".config/fcitx5/config";
+    };
+    fcitx-profile = {
+      source = ./fcitx-profile;
+      target = ".config/fcitx5/profile";
+    };
+  };
+
   dconf.settings = {
     "org/gnome/desktop/wm/keybindings" = {
       switch-input-source = [];
