@@ -20,6 +20,7 @@ stdenv.mkDerivation rec {
     ./0001-change-past-to-future.patch
     ./0002-use-user-data-dir.patch
     ./0003-use-splitext-for-user-agent-verification.patch
+    ./0004-tolerate-network-failure.patch
   ];
 
 
