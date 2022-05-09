@@ -12,7 +12,6 @@ mkIf (currentDevice == "desktop") {
     splatnet2statink = {
       Unit = {
         Description = "splatnet2statink monitoring daemon";
-        After = [ "network-online.target" ];
       };
 
       Service = {
