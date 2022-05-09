@@ -21,6 +21,6 @@
   programs.javaPackages = {
     jdk8 = pkgs.openjdk8;
     jdk11 = pkgs.openjdk11;
-    jdk16 = pkgs.adoptopenjdk-hotspot-bin-16;
+    jdk17 = pkgs.openjdk17;
   };
 }
