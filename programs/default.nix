@@ -57,7 +57,7 @@
     qbittorrent teams remmina
 
     # games
-    multimc mgba warp-randomizer
+    polymc mgba warp-randomizer
 
     # media
     obs-studio peek aseprite-unfree vlc audacity

@@ -8,7 +8,7 @@ in
 with extensions;
 
 [
-  arcmenu-27 user-themes appindicator workspace-switch-wraparound
+  arcmenu user-themes appindicator workspace-switch-wraparound
   no-overview
   dash-to-panel
 ]
