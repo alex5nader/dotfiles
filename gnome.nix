@@ -16,10 +16,10 @@
       '';
     };
 
-    desktopManager.budgie.enable = true;
+    # desktopManager.budgie.enable = true;
   };
 
   programs.gnupg.agent.pinentryFlavor = "gnome3";
 
-  services.dbus.packages = [ pkgs.gnome.dconf ];
+  services.dbus.packages = [ pkgs.dconf ];
 }

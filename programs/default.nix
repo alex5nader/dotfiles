@@ -12,7 +12,7 @@
 
     libimobiledevice
 
-    pciutils glxinfo ripgrep gnome.gnome-tweak-tool file
+    pciutils glxinfo ripgrep gnome.gnome-tweaks file
   ];
 
   programs.gnupg.agent.enable = true; # TODO: missing pinentryFlavor = "gnome3" -- is this necessary?

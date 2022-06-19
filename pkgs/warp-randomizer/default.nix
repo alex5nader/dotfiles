@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
     icon = "WarpRandomizerMain";
     desktopName = "Pokémon Warp Randomizer";
     comment = "Tool to randomize all warps in a Pokémon game";
-    categories = "Game;";
+    categories = [ "Game" ];
   }) ];
 
   nativeBuildInputs = [ autoPatchelfHook makeWrapper copyDesktopItems ];
