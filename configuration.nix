@@ -14,6 +14,7 @@
     ./localization.nix
     ./metadata.nix
     ./misc-hardware.nix
+    ./nix-direnv.nix
     ./printing.nix
     ./sound.nix
     ./users.nix
