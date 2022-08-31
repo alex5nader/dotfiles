@@ -3,6 +3,7 @@
 {
   imports = [
     ./flameshot
+    ./neovim
 
     ./splatnet2statink.nix
   ];
@@ -63,7 +64,7 @@
     obs-studio peek aseprite-unfree vlc audacity
 
     # terminal
-    fd sd du-dust unzip
+    fd sd du-dust unzip bottom
 
     # programming
     idea-ultimate clion webstorm pycharm-professional
