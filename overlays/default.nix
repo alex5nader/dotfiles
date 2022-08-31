@@ -1,6 +1,7 @@
 jdks:
 
 [
+  (import ./astronvim.nix)
   (import ./budgie.nix)
   (import ./jdks.nix jdks)
   (import ./splatnet2statink.nix)
