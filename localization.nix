@@ -6,7 +6,7 @@ in
 
 mkMerge [
   (mkIf (currentDevice == "laptop") {
-    time.timeZone = "America/Chicago";
+    time.timeZone = "Asia/Tokyo";
 
     i18n.defaultLocale = "en_US.UTF-8";
     services.xserver.layout = "us";
