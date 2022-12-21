@@ -3,7 +3,6 @@
     ./options
     ./programs
 
-    ./apply-overlays.nix
     ./boot.nix
     ./displays.nix
     ./drives.nix
@@ -16,6 +15,7 @@
     ./misc-hardware.nix
     ./nix-direnv.nix
     ./nix-flakes.nix
+    ./nixpkgs.nix
     ./printing.nix
     ./sound.nix
     ./users.nix
