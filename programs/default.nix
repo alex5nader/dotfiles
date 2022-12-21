@@ -9,6 +9,11 @@
   ];
 
 
+  programs.chromium = {
+    enable = true;
+    package = pkgs.ungoogled-chromium;
+  };
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -40,6 +45,11 @@
 
   programs.home-manager.enable = true;
 
+  programs.nix-index = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
@@ -48,12 +58,20 @@
       editorconfig.editorconfig
       ms-vscode.cpptools
       skyapps.fish-vscode
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
-      name = "VerilogHDL";
-      publisher = "mshr-h";
-      version = "1.5.3";
-      sha256 = "1har7q0flqnx5q74nj3gn8l80aibmnn4xyscddbim5i5yqdx45g0";
-    }];
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "VerilogHDL";
+        publisher = "mshr-h";
+        version = "1.5.3";
+        sha256 = "1har7q0flqnx5q74nj3gn8l80aibmnn4xyscddbim5i5yqdx45g0";
+      }
+      {
+        name = "language-koka";
+        publisher = "koka";
+        version = "2.0.4";
+        sha256 = "yv4Na4fWEiTvLYBqCdIpZ8V08jv72JOcMKbf932wUfg=";
+      }
+    ];
   };
 
   home.packages = with pkgs; with jetbrains; [
@@ -63,7 +81,7 @@
     qbittorrent teams remmina
 
     # games
-    polymc mgba warp-randomizer
+    prismlauncher mgba warp-randomizer
 
     # media
     obs-studio peek aseprite-unfree vlc audacity
@@ -74,7 +92,7 @@
     # programming
     idea-ultimate clion webstorm pycharm-professional
     datagrip mongodb-compass gcc rustup python38 verilog
-    logisim gnumake
+    logisim gnumake nodePackages.node2nix
 
     # theme
     nordic papirus-icon-theme

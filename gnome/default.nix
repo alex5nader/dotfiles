@@ -20,6 +20,11 @@ in
       gtk-theme = "Nordic-Polar";
     };
 
+    "org/gnome/desktop/sound" = {
+      # Disable awful drip sound when an "error" occurs
+      event-sounds = false;
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       # Switch between "windows" rather than "applications"
       # "applications" means group by type of app, "windows" lets
