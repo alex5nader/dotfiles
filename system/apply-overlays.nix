@@ -1,9 +1,5 @@
-{ config, options, ... }:
+{ my-pkgs, ... }:
 
 {
-  nixpkgs.overlays = import ./overlays config.programs.javaPackages;
-
-  nix.nixPath = options.nix.nixPath.default ++ [
-    "nixpkgs-overlays=/etc/nixos/overlays/compat/"
-  ];
+  nixpkgs.overlays = my-pkgs.overlays;
 }
