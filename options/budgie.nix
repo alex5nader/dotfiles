@@ -1,16 +1,23 @@
-# { config, lib, pkgs, budgie, ... }:
+{ config, lib, pkgs, budgie, ... }:
 
-# with lib;
+with lib;
 
-# let 
-#   xcfg = config.services.xserver;
-#   cfg = xcfg.desktopManager.budgie;
-#   gnome = pkgs.gnome;
-# in
+let 
+  xcfg = config.services.xserver;
+  cfg = xcfg.desktopManager.budgie;
+in
 {
-#   options = {
-#     services.xserver.desktopManager.budgie.enable = mkEnableOption "Budgie desktop environment";
-#   };
+  options = {
+    services.xserver.desktopManager.budgie.enable = mkEnableOption "Budgie desktop environment";
+  };
+
+  config = mkIf (xcfg.enable && cfg.enable) {
+    services.xserver.displayManager.sessionPackages = [ pkgs.budgie.budgie-desktop ];
+
+    environment.systemPackages = with pkgs; with gnome; [
+      gnome-session ibus
+    ];
+  };
 
 #   config = mkIf (xcfg.enable && cfg.enable) {
 #     security.polkit.enable = true;

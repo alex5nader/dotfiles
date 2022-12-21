@@ -16,7 +16,7 @@
       '';
     };
 
-    # desktopManager.budgie.enable = true;
+    desktopManager.budgie.enable = true;
   };
 
   programs.gnupg.agent.pinentryFlavor = "gnome3";

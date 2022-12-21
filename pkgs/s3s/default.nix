@@ -3,14 +3,14 @@
 
 stdenv.mkDerivation rec {
   pname = "s3s";
-  version = "0.1.1-dev";
+  version = "0.1.2-dev";
 
   format = "other";
   src = fetchFromGitHub {
     owner = "alex5nader";
     repo = "s3s";
     rev = "v${version}";
-    sha256 = "L40DPnX3fSte1mMo9fxKmJKlvgPAEiYIZ5prylTgOq4=";
+    sha256 = "yxEfSOeBHh8og/X/NqPcmEFZkiNXr5IxuaKo76cdV4c=";
   };
 
 
@@ -26,12 +26,13 @@ stdenv.mkDerivation rec {
   ];
 
   unpackPhase = ''
-    cp $src/*.py .
+    cp $src/src/*.py .
   '';
 
   installPhase = ''
     mkdir -p $out/bin
     cp * $out/bin
     mv $out/bin/s3s.py $out/bin/s3s
+    chmod a+x $out/bin/s3s
   '';
 }
