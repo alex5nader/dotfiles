@@ -1,6 +1,10 @@
+{ budgie, ... }:
+
 {
   imports = [
-    ./options
+    budgie.nixosModules.default
+
+    # ./options
     ./programs
 
     ./boot.nix

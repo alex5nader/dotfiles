@@ -1,5 +1,42 @@
 {
   "nodes": {
+    "budgie": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1671582696,
+        "narHash": "sha256-QM3b6RV2HLfy6x+kqluWXV1l7jbG0qe8asECTe4ulT4=",
+        "owner": "FedericoSchonborn",
+        "repo": "budgie-nix",
+        "rev": "84ba64f16c5dffc37111600b5bc4e94c51a2ccc4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FedericoSchonborn",
+        "repo": "budgie-nix",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668681692,
+        "narHash": "sha256-Ht91NGdewz8IQLtWZ9LCeNXMSXHUss+9COoqu6JLmXU=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "009399224d5e398d03b22badca40a37ac85412a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -68,6 +105,7 @@
     },
     "root": {
       "inputs": {
+        "budgie": "budgie",
         "home-manager": "home-manager",
         "my-pkgs": "my-pkgs",
         "nixpkgs": "nixpkgs",

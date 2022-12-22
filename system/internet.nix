@@ -1,4 +1,4 @@
-{ currentDevice, lib, ... }:
+{ mkIfDevice, lib, ... }:
 
 let
   inherit (lib) mkIf mkMerge;
@@ -9,14 +9,14 @@ mkMerge [
     networking.useDHCP = false;
   }
 
-  (mkIf (currentDevice == "laptop") {
+  (mkIfDevice "laptop" {
     networking.interfaces.wlp170s0.useDHCP = true;
     
     # laptop wifi is slow unless powersave is disabled
     networking.networkmanager.wifi.powersave = false;
   })
 
-  (mkIf (currentDevice == "desktop") {
+  (mkIfDevice "desktop" {
     networking.interfaces.enp33s0.useDHCP = true;
   })
 ]

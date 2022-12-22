@@ -1,19 +1,18 @@
-{ config, currentDevice, lib, pkgs, ... }:
+{ config, mkIfDevice, lib, pkgs, ... }:
 
 let
   inherit (lib) mkIf mkMerge;
 in
 
 mkMerge [
-  (mkIf (currentDevice == "laptop") {
-    services.xserver.desktopManager.gnome.extraGSettingsOverrides =
-      mkIf config.services.xserver.desktopManager.gnome.enable ''
-        [org.gnome.desktop.interface]
-        text-scaling-factor = 1.5
-      '';
+  (mkIfDevice "laptop" {
+    services.xserver.desktopManager.budgie.extraGSettingsOverrides = ''
+      [org.gnome.desktop.interface]
+      text-scaling-factor = 1.5
+    '';
   })
 
-  (mkIf (currentDevice == "desktop") {
+  (mkIfDevice "desktop" {
     hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       modesetting.enable = true;

@@ -1,11 +1,11 @@
-{ currentDevice, lib, ... }:
+{ mkIfDevice, lib, ... }:
 
 let
   inherit (lib) mkIf mkMerge;
 in
 
 mkMerge [
-  (mkIf (currentDevice == "laptop") {
+  (mkIfDevice "laptop" {
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/1518a8cd-966d-4a21-9c29-7323cd0e242a";
       fsType = "ext4";
@@ -21,7 +21,7 @@ mkMerge [
     ];
   })
 
-  (mkIf (currentDevice == "desktop") {
+  (mkIfDevice "desktop" {
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/84e2af52-d773-45a7-a27b-9db7af9340e9";
       fsType = "ext4";

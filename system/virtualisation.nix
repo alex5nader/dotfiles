@@ -1,4 +1,4 @@
-{ currentDevice, lib, pkgs, ... }:
+{ mkIfDevice, lib, pkgs, ... }:
 
 let
   inherit (lib) mkIf mkMerge;
@@ -12,7 +12,7 @@ mkMerge [
     users.users.noobstar.extraGroups = [ "libvirtd" ];
   }
 
-  (mkIf (currentDevice == "desktop") {
+  (mkIfDevice "desktop" {
     boot.kernelModules = [ "vfio-pci" ];
     boot.kernelParams = [ "iommu=pt" "amd_iommu=on" "rd.driver.pre=vfio-pc" ];
 

@@ -1,11 +1,10 @@
-{ currentDevice, lib, pkgs, ... }:
+{ mkIfDevice, pkgs, ... }:
 
 let
-  inherit (lib) mkIf;
   inherit (pkgs) splatnet2statink;
 in
 
-mkIf (currentDevice == "desktop") {
+mkIfDevice "desktop" {
   home.packages = [ splatnet2statink ];
 
   systemd.user.services = {

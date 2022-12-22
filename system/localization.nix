@@ -1,11 +1,11 @@
-{ currentDevice, lib, ... }:
+{ mkIfDevice, lib, ... }:
 
 let
   inherit (lib) mkIf mkMerge;
 in
 
 mkMerge [
-  (mkIf (currentDevice == "laptop") {
+  (mkIfDevice "laptop" {
     time.timeZone = "Asia/Tokyo";
 
     i18n.defaultLocale = "en_US.UTF-8";
@@ -16,7 +16,7 @@ mkMerge [
     };
   })
   
-  (mkIf (currentDevice == "desktop") {
+  (mkIfDevice "desktop" {
     time.timeZone = "America/Chicago";
 
     i18n.defaultLocale = "en_US.UTF-8";

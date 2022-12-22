@@ -1,25 +1,41 @@
-{ pkgs, ... }:
+{ lib, pkgs, budgie, ... }:
+
+with lib;
 
 {
-  services.xserver = {
-    enable = true;
-    displayManager.gdm = {
-      enable = true;
-      wayland = false;
+  options = {
+    services.xserver.displayManager.lightdm.greeters.slick.cursorTheme.name = mkOption {
+      type = types.str;
+      default = "";
     };
-
-    desktopManager.gnome = {
-      enable = true;
-      extraGSettingsOverrides = ''
-        [org.gnome.desktop.wm.preferences]
-        button-layout = ":minimize,maximize,close"
-      '';
+    services.xserver.displayManager.lightdm.greeters.slick.cursorTheme.package = mkOption {
+      type = types.package;
     };
-
-    desktopManager.budgie.enable = true;
   };
 
-  programs.gnupg.agent.pinentryFlavor = "gnome3";
+  config = {
+    services.xserver = {
+      enable = true;
+      # displayManager.gdm = {
+      #   enable = true;
+      #   wayland = false;
+      # };
+      # displayManager.lightdm.enable = true;
 
-  services.dbus.packages = [ pkgs.dconf ];
+      # desktopManager.gnome = {
+      #   enable = true;
+      #   extraGSettingsOverrides = ''
+      #     [org.gnome.desktop.wm.preferences]
+      #     button-layout = ":minimize,maximize,close"
+      #   '';
+      # };
+
+      desktopManager.budgie.enable = true;
+      libinput.enable = true;
+    };
+
+    # programs.gnupg.agent.pinentryFlavor = "gnome3";
+
+    # services.dbus.packages = [ pkgs.dconf ];
+  };
 }
