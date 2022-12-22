@@ -2,15 +2,23 @@
 
 {
   home.sessionVariables = {
-    NEOVIDE_MULTIGRID = "1";
+    NEOVIDE_MULTIGRID = "true";
   };
 
   home.packages = with pkgs; [
-    neovim-unwrapped neovide
+    neovide
     xclip # required for clipboard registers to work
     lazygit
-    rust-analyzer bacon
+    rust-analyzer
+    bacon
   ];
+
+  programs.neovim = {
+    enable = true;
+    extraPackages = with pkgs; [
+      rnix-lsp
+    ];
+  };
 
   xdg.configFile = {
     nvim = {

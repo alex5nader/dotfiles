@@ -59,18 +59,6 @@
         "type": "github"
       }
     },
-    "my-pkgs": {
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-nGqeEUDiP2pSiRr/nIkUQVmUf3eEM4eqwLTUvLBHoYI=",
-        "path": "./my-pkgs",
-        "type": "path"
-      },
-      "original": {
-        "path": "./my-pkgs",
-        "type": "path"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1671313200,
@@ -107,7 +95,6 @@
       "inputs": {
         "budgie": "budgie",
         "home-manager": "home-manager",
-        "my-pkgs": "my-pkgs",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }

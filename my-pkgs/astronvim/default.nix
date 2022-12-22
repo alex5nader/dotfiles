@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "astronvim";
-  version = "1.9.0";
+  version = "2.10.1";
 
   src = fetchFromGitHub {
     owner = "AstroNvim";
     repo = "AstroNvim";
     rev = "v${version}";
-    sha256 = "SDDiUSnrCrBvIezLnDxnFAwAdPNpCT3xBHvjf74xGpU=";
+    sha256 = "xup1hYFepKFDs+PhO25u1OrSWlxGtIfJqLMFCqQK0Tg=";
   };
 
   dontUnpack = true;

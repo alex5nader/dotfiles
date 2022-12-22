@@ -10,7 +10,7 @@ in
   ];
 
   home.packages = extensions;
-  
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       # Disables annoying behaviour when moving mouse into corner of screen
@@ -18,6 +18,7 @@ in
 
       # Theming
       gtk-theme = "Nordic-Polar";
+      monospace-font-name = "FiraCode Nerd Font 10";
     };
 
     "org/gnome/desktop/sound" = {
@@ -29,8 +30,8 @@ in
       # Switch between "windows" rather than "applications"
       # "applications" means group by type of app, "windows" lets
       # you scroll through each window of an app you have open 
-      switch-applications = [];
-      switch-applications-backward = [];
+      switch-applications = [ ];
+      switch-applications-backward = [ ];
       switch-windows = [ "<Alt>Tab" ];
       switch-windows-backward = [ "<Shift><Alt>Tab" ];
 
@@ -56,15 +57,16 @@ in
     "org/gnome/shell" = {
       # Enable extensions installed via environment.systemPackages
       disable-user-extensions = false;
-      enabled-extensions = let
-        inherit (lib.lists) map;
-        getUuid = extension:
-          if extension ? uuid
-          then extension.uuid
-          else if extension.passthru ? extensionUuid
-          then extension.passthru.extensionUuid
-          else throw "Extension ${extension} does not have .uuid or .passthru.extensionUuid";
-      in
+      enabled-extensions =
+        let
+          inherit (lib.lists) map;
+          getUuid = extension:
+            if extension ? uuid
+            then extension.uuid
+            else if extension.passthru ? extensionUuid
+            then extension.passthru.extensionUuid
+            else throw "Extension ${extension} does not have .uuid or .passthru.extensionUuid";
+        in
         map getUuid extensions;
     };
 
@@ -73,3 +75,4 @@ in
     };
   };
 }
+
