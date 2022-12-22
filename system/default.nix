@@ -4,7 +4,6 @@
   imports = [
     budgie.nixosModules.default
 
-    # ./options
     ./programs
 
     ./boot.nix
@@ -27,3 +26,4 @@
     ./vpn.nix
   ];
 }
+
