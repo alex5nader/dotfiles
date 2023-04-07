@@ -14,9 +14,13 @@
       url = "github:FedericoSchonborn/budgie-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mozilla = {
+      url = "github:mozilla/nixpkgs-mozilla";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, budgie }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, budgie, mozilla }:
     let
       system = "x86_64-linux";
 
@@ -25,6 +29,7 @@
 
         config.allowUnfree = true;
         overlays = builtins.attrValues budgie.overlays ++ [
+          mozilla.overlay
           (import ./my-pkgs/overlay.nix)
           (import ./overlay.nix { inherit nixpkgs-unstable; })
         ];

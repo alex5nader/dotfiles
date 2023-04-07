@@ -34,6 +34,8 @@ with lib;
       libinput.enable = true;
     };
 
+    services.upower.enable = true; # Enable power display in panel
+
     # programs.gnupg.agent.pinentryFlavor = "gnome3";
 
     # services.dbus.packages = [ pkgs.dconf ];

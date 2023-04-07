@@ -76,30 +76,68 @@
 
   home.packages = with pkgs; with jetbrains; [
     # general use
-    discord yubioath-desktop obsidian konversation libreoffice
-    signal-desktop teams anki unstable.electron-mail zoom-us
-    qbittorrent teams remmina
+    discord
+    yubioath-desktop
+    obsidian
+    konversation
+    libreoffice
+    signal-desktop
+    teams
+    anki
+    unstable.electron-mail
+    zoom-us
+    qbittorrent
+    teams
+    remmina
+    idevicerestore
+    libirecovery
 
     # games
-    prismlauncher mgba warp-randomizer
+    prismlauncher
+    mgba
+    warp-randomizer
 
     # media
-    obs-studio peek aseprite-unfree vlc audacity
+    obs-studio
+    peek
+    aseprite-unfree
+    vlc
+    audacity
 
     # terminal
-    fd sd du-dust unzip bottom
+    fd
+    sd
+    du-dust
+    unzip
+    bottom
 
     # programming
-    idea-ultimate clion webstorm pycharm-professional
-    datagrip mongodb-compass gcc rustup python38 verilog
-    logisim gnumake nodePackages.node2nix
+    idea-ultimate
+    clion
+    webstorm
+    pycharm-professional
+    datagrip
+    mongodb-compass
+    gcc
+    rustup
+    python38
+    verilog
+    logisim
+    gnumake
+    nodePackages.node2nix
+
+    ldtk
+    unstable.tracy
 
     # theme
-    nordic papirus-icon-theme
+    nordic
+    papirus-icon-theme
 
     # admin
-    arandr gnome.dconf-editor
+    arandr
+    gnome.dconf-editor
   ] ++ (with python38Packages; [
-    pip virtualenv
+    pip
+    virtualenv
   ]);
 }

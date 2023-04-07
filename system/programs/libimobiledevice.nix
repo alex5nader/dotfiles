@@ -5,5 +5,9 @@
     libimobiledevice
   ];
 
-  services.usbmuxd.enable = true;
+  services.usbmuxd = {
+    user = "root";
+    group = "root";
+    enable = true;
+  };
 }
