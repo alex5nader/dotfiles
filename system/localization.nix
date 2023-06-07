@@ -10,10 +10,7 @@ mkMerge [
 
     i18n.defaultLocale = "en_US.UTF-8";
     services.xserver.layout = "us";
-    console = {
-      font = "Lat2-Terminus16";
-      keyMap = "us";
-    };
+    console.keyMap = "us";
   })
   
   (mkIfDevice "desktop" {
@@ -21,9 +18,6 @@ mkMerge [
 
     i18n.defaultLocale = "en_US.UTF-8";
     services.xserver.layout = "us";
-    console = {
-      font = "Lat2-Terminus16";
-      keyMap = "us";
-    };
+    console.keyMap = "us";
   })
 ]

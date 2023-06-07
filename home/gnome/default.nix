@@ -18,6 +18,8 @@ in
 
       # Theming
       gtk-theme = "Nordic-Polar";
+      font-name= "Inter 10";
+      document-font-name = "Inter 10";
       monospace-font-name = "FiraCode Nerd Font 10";
     };
 
@@ -38,6 +40,10 @@ in
       # Switch between workspaces like alt-tab
       switch-to-workspace-left = [ "<Shift><Super>Tab" ];
       switch-to-workspace-right = [ "<Super>Tab" ];
+    };
+
+    "org/gnome/desktop/wm/preferences" = {
+      titlebar-font = "Inter Bold 10";
     };
 
     "org/gnome/gnome-session" = {
