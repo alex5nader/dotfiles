@@ -2,16 +2,11 @@
   description = "My device configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    budgie = {
-      url = "github:FedericoSchonborn/budgie-nix";
+      url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, budgie, mozilla }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mozilla }:
     let
       system = "x86_64-linux";
 
@@ -28,7 +23,7 @@
         inherit system;
 
         config.allowUnfree = true;
-        overlays = builtins.attrValues budgie.overlays ++ [
+        overlays = [
           mozilla.overlay
           (import ./my-pkgs/overlay.nix)
           (import ./overlay.nix { inherit nixpkgs-unstable; })
@@ -46,8 +41,8 @@
 
             modules = [ ./system ];
             specialArgs = {
-              inherit pkgs budgie mkIfDevice;
-            }; 
+              inherit pkgs mkIfDevice;
+            };
           };
 
           home = home-manager.lib.homeManagerConfiguration {

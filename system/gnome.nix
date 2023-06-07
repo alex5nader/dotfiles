@@ -1,18 +1,8 @@
-{ lib, pkgs, budgie, ... }:
+{ lib, pkgs, ... }:
 
 with lib;
 
 {
-  options = {
-    services.xserver.displayManager.lightdm.greeters.slick.cursorTheme.name = mkOption {
-      type = types.str;
-      default = "";
-    };
-    services.xserver.displayManager.lightdm.greeters.slick.cursorTheme.package = mkOption {
-      type = types.package;
-    };
-  };
-
   config = {
     services.xserver = {
       enable = true;

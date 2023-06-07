@@ -9,7 +9,6 @@
     neovide
     xclip # required for clipboard registers to work
     lazygit
-    rust-analyzer
     bacon
   ];
 

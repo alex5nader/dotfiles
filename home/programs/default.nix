@@ -77,7 +77,7 @@
   home.packages = with pkgs; with jetbrains; [
     # general use
     discord
-    yubioath-desktop
+    yubioath-flutter
     obsidian
     konversation
     libreoffice
@@ -100,7 +100,6 @@
     # media
     obs-studio
     peek
-    aseprite-unfree
     vlc
     audacity
 

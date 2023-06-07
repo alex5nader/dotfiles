@@ -8,14 +8,15 @@ mkMerge [
   {
     # yubikey
     services.pcscd.enable = true;
-    
+
     hardware.enableRedistributableFirmware = lib.mkDefault true;
   }
 
   (mkIfDevice "laptop" {
     powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    hardware.video.hidpi.enable = lib.mkDefault true;
+    # hardware.video.hidpi.enable = lib.mkDefault true; # TODO: verify whether anything broke
     services.fprintd.enable = true;
   })
 ]
+
