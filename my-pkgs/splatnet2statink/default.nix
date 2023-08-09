@@ -5,23 +5,25 @@
 
 stdenv.mkDerivation rec {
   pname = "splatnet2statink";
-  version = "1.7.1";
+  version = "1.8.2";
+
+  ver = version;
 
 
   format = "other";
   src = fetchFromGitHub {
-    owner = "frozenpandaman";
+    owner = "alex5nader";
     repo = "splatnet2statink";
     rev = "v${version}";
-    sha256 = "109frj8vkbbgk058xxwijgc681cb31fbdjnl50j0ssfha2nnq96k";
+    sha256 = "wA9oYydjvjhqq+4NUw7BklH7gEEZIpM+ZOOhkQvW1Cg=";
   };
 
-  patches = [
-    ./0001-change-past-to-future.patch
-    ./0002-use-user-data-dir.patch
-    ./0003-use-splitext-for-user-agent-verification.patch
-    ./0004-tolerate-network-failure.patch
-  ];
+  # patches = [
+  #   ./0001-change-past-to-future.patch
+  #   ./0002-use-user-data-dir-for-config.patch
+  #   ./0003-use-splitext-for-user-agent-verification.patch
+  #   ./0004-tolerate-network-failure.patch
+  # ];
 
 
   buildInputs = [

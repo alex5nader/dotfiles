@@ -21,7 +21,9 @@
     ./sound.nix
     ./users.nix
     ./virtualisation.nix
-    ./vpn.nix
+    ./vpn.nix ./ssh.nix
+
+
   ];
 }
 
