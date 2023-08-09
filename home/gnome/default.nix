@@ -12,6 +12,17 @@ in
   home.packages = extensions;
 
   dconf.settings = {
+    "com/solus-project/budgie-panel" = {
+      # Fix yellow background on some panel elements
+      # Also applies nord theme
+      builtin-theme = true;
+    };
+
+    "org/buddiesofbudgie/budgie-desktop-view" = {
+      # Disable desktop icons
+      show = false;
+    };
+
     "org/gnome/desktop/interface" = {
       # Disables annoying behaviour when moving mouse into corner of screen
       enable-hot-corners = false;
