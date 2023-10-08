@@ -11,8 +11,12 @@
   environment.systemPackages = with pkgs; [
     git
 
+    man-pages man-pages-posix
+
     pciutils glxinfo ripgrep gnome.gnome-tweaks file
   ];
+
+  documentation.dev.enable = true;
 
   programs.gnupg.agent.enable = true; # TODO: missing pinentryFlavor = "gnome3" -- is this necessary?
   programs.steam.enable = true;

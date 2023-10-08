@@ -128,6 +128,10 @@
     remmina
     idevicerestore
     libirecovery
+    pandoc
+    texlive.combined.scheme-full
+    musescore
+    unstable.aseprite
 
     # games
     prismlauncher

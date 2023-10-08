@@ -1,4 +1,4 @@
-{ mkIfDevice, lib, ... }:
+{ mkIfDevice, lib, pkgs, ... }:
 
 let
   inherit (lib) mkIf mkMerge;
@@ -7,6 +7,12 @@ in
 mkMerge [
   {
     networking.useDHCP = false;
+
+    services.globalprotect.enable = true;
+
+    environment.systemPackages = with pkgs; [
+      globalprotect-openconnect
+    ];
   }
 
   (mkIfDevice "laptop" {
