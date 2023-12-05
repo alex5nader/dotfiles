@@ -2,7 +2,7 @@
 
 {
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       inter
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       ipafont # cjk

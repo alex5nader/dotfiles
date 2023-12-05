@@ -5,7 +5,7 @@
     ./flameshot
     ./neovim
 
-    ./splatnet2statink.nix
+    # ./splatnet2statink.nix
   ];
 
 
@@ -19,7 +19,7 @@
     nix-direnv.enable = true;
   };
 
-  programs.exa = {
+  programs.eza = {
     enable = true;
     enableAliases = true;
   };
@@ -158,7 +158,7 @@
     mongodb-compass
     gcc
     rustup
-    python38
+    python311
     verilog
     logisim
     gnumake
@@ -177,7 +177,7 @@
     # admin
     arandr
     gnome.dconf-editor
-  ] ++ (with python38Packages; [
+  ] ++ (with python311Packages; [
     pip
     virtualenv
   ]);
