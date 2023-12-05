@@ -5,7 +5,11 @@ self: super: {
     extraPkgs = pkgs: with pkgs; [ pango harfbuzz libthai ];
   };
   
-  unstable = nixpkgs-unstable.outputs.legacyPackages.${self.system};
+  unstable = import nixpkgs-unstable {
+    system = self.system;
+
+    config.allowUnfree = true;
+  };
 
   vscode-extensions = self.lib.recursiveUpdate super.vscode-extensions {
     arrterian.nix-env-selector = self.vscode-utils.buildVscodeMarketplaceExtension {

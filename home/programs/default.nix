@@ -119,18 +119,15 @@
     konversation
     libreoffice
     signal-desktop
-    teams
     anki
     unstable.electron-mail
     zoom-us
     qbittorrent
-    teams
     remmina
     idevicerestore
     libirecovery
     pandoc
     texlive.combined.scheme-full
-    musescore
     unstable.aseprite
 
     # games
@@ -156,6 +153,7 @@
     clion
     webstorm
     pycharm-professional
+    jetbrains-toolbox
     datagrip
     mongodb-compass
     gcc
@@ -167,6 +165,7 @@
     nodePackages.node2nix
     nixpkgs-fmt
     nil
+    cmake
 
     ldtk
     unstable.tracy
