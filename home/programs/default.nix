@@ -68,9 +68,15 @@
       };
     };
     languages = {
-      language = [{
-        name = "rust";
-      }];
+      language = [
+        { name = "rust"; }
+        {
+          name = "nix";
+          config = {
+            nil.formatting.command = ["${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"];
+          };
+        }
+      ];
     };
   };
 
@@ -155,6 +161,8 @@
     logisim
     gnumake
     nodePackages.node2nix
+    nixpkgs-fmt
+    nil
 
     ldtk
     unstable.tracy
