@@ -70,13 +70,14 @@
     languages = {
       language = [
         { name = "rust"; }
-        {
-          name = "nix";
-          config = {
-            nil.formatting.command = ["${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"];
-          };
-        }
+        { name = "nix"; }
       ];
+
+      language-server.nil = {
+        config = {
+          nil.formatting.command = ["${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"];
+        };
+      };
     };
   };
 
@@ -166,6 +167,7 @@
     nixpkgs-fmt
     nil
     cmake
+    racket
 
     ldtk
     unstable.tracy
