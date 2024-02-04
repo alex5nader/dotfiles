@@ -13,12 +13,8 @@ mkMerge [
   })
 
   (mkIfDevice "desktop" {
-    services.xserver.videoDrivers = [ "nvidia" ];
-
-    hardware.nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-      modesetting.enable = true;
-    };
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    services.xserver.videoDrivers = [ "amdgpu" ];
 
     services.autorandr = {
       enable = true;

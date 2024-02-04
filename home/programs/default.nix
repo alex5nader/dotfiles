@@ -135,6 +135,7 @@
     prismlauncher
     mgba
     warp-randomizer
+    unstable.r2modman
 
     # media
     obs-studio
@@ -157,7 +158,7 @@
     jetbrains-toolbox
     datagrip
     mongodb-compass
-    gcc
+    gcc13
     rustup
     python311
     verilog

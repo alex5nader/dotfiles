@@ -10,6 +10,7 @@
     ./gradle.nix
     ./metadata.nix
     ./shell.nix
+    ./sound.nix
     ./tray-target.nix
   ];
 }

@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; [
     git
 
-    man-pages man-pages-posix
+    man-pages man-pages-posix gnome.yelp
 
     pciutils glxinfo ripgrep gnome.gnome-tweaks file
   ];
