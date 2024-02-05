@@ -51,6 +51,14 @@ in
         type = "project";
         prefix = "${config.home.homeDirectory}/Projects";
       };
+      docs = makeNavigationFunction {
+        type = "folder";
+        prefix = "${config.home.homeDirectory}/Documents";
+      };
+      osc = makeNavigationFunction {
+        type = "folder";
+        prefix = "${config.home.homeDirectory}/Projects/osc";
+      };
     };
   };
 
