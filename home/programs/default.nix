@@ -160,6 +160,8 @@
     mongodb-compass
     gcc13
     rustup
+    cargo-expand
+    cargo-generate
     python311
     verilog
     logisim
@@ -170,6 +172,7 @@
     cmake
     racket
     sshfs
+    bruno
 
     ldtk
     unstable.tracy
