@@ -169,6 +169,7 @@
     nil
     cmake
     racket
+    sshfs
 
     ldtk
     unstable.tracy
