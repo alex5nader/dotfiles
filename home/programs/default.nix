@@ -88,6 +88,39 @@
     enableFishIntegration = true;
   };
 
+  services.ssh-agent.enable = true;
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      cs1 = {
+        hostname = "cs1.utdallas.edu";
+        user = "ash190005";
+      };
+      cs2 = {
+        hostname = "cs2.utdallas.edu";
+        user = "ash190005";
+      };
+      opnear3 = {
+        hostname = "opnear3.utdallas.edu";
+        user = "opnear3";
+      };
+      opnear4 = {
+        hostname = "opnear4.utdallas.edu";
+        user = "opnear";
+      };
+      mininet = {
+        hostname = "localhost";
+        port = 8022;
+        user = "mininet";
+        forwardX11 = true;
+        forwardAgent = true;
+      };
+    };
+    extraConfig = ''
+      IPQoS=0x00
+    '';
+  };
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
@@ -173,6 +206,10 @@
     racket
     sshfs
     bruno
+    nmap-unfree
+    wireshark
+    xorg.xhost
+    tcpdump
 
     ldtk
     unstable.tracy

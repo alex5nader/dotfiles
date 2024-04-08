@@ -18,6 +18,10 @@ in
 {
   home.packages = with pkgs; [ any-nix-shell ];
 
+  home.sessionVariables = {
+    VIRSH_DEFAULT_CONNECT_URI = "qemu:///system";
+  };
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''

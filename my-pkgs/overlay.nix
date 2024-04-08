@@ -3,4 +3,5 @@ self: super: {
   # s3s = super.callPackage ./s3s {};
   # splatnet2statink = super.callPackage ./splatnet2statink {};
   warp-randomizer = super.callPackage ./warp-randomizer {};
+  netconf-client = super.python3Packages.callPackage ./netconf-client.nix {};
 }

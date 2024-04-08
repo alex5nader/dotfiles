@@ -13,6 +13,8 @@ mkMerge [
     environment.systemPackages = with pkgs; [
       globalprotect-openconnect
     ];
+
+    programs.mininet.enable = true;
   }
 
   (mkIfDevice "laptop" {

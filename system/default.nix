@@ -18,6 +18,7 @@
     ./nix-flakes.nix
     ./nixpkgs.nix
     ./printing.nix
+    ./ssh.nix
     ./sound.nix
     ./users.nix
     ./virtualisation.nix
