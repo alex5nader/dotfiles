@@ -163,6 +163,7 @@
     pandoc
     texlive.combined.scheme-full
     unstable.aseprite
+    alsa-utils
 
     # games
     prismlauncher

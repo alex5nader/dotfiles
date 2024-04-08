@@ -12,5 +12,6 @@
     ./shell.nix
     ./sound.nix
     ./tray-target.nix
+    ./xresources.nix
   ];
 }
