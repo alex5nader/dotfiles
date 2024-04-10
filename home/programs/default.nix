@@ -91,6 +91,9 @@
   services.ssh-agent.enable = true;
   programs.ssh = {
     enable = true;
+    controlMaster = "auto";
+    controlPath = "~/.ssh/control-socket_%r@%n:%p";
+    controlPersist = "10m";
     matchBlocks = {
       cs1 = {
         hostname = "cs1.utdallas.edu";
@@ -101,11 +104,11 @@
         user = "ash190005";
       };
       opnear3 = {
-        hostname = "opnear3.utdallas.edu";
+        hostname = "10.177.46.94";
         user = "opnear3";
       };
       opnear4 = {
-        hostname = "opnear4.utdallas.edu";
+        hostname = "10.177.46.143";
         user = "opnear";
       };
       mininet = {
