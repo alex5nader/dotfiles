@@ -5,6 +5,10 @@ let
 in
 
 mkMerge [
+  {
+    boot.supportedFilesystems = ["ntfs"];
+  }
+
   (mkIfDevice "laptop" {
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/1518a8cd-966d-4a21-9c29-7323cd0e242a";
