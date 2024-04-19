@@ -109,7 +109,7 @@
       };
       opnear4 = {
         hostname = "10.177.46.143";
-        user = "opnear";
+        user = "opnear4";
       };
       mininet = {
         hostname = "localhost";
@@ -167,12 +167,14 @@
     texlive.combined.scheme-full
     unstable.aseprite
     alsa-utils
+    usbutils
 
     # games
     prismlauncher
     mgba
     warp-randomizer
     unstable.r2modman
+    fusee-interfacee-tk
 
     # media
     obs-studio

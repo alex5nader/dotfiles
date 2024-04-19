@@ -33,6 +33,14 @@ in
     "net.ipv6.conf.all.forwarding" = true;
   };
 
+  services.openssh.enable = true;
+  users.users.admin = {
+    group = "admin";
+    password = "admin";
+    isNormalUser = true;
+  };
+  users.groups.admin = {};
+
   services.radvd.enable = true;
   services.radvd.config = ''
     interface eth0 {

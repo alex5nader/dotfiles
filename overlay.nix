@@ -1,6 +1,12 @@
 { nixpkgs-unstable }:
 
 self: super: {
+  fusee-interfacee-tk = super.fusee-interfacee-tk.overrideAttrs (old: {
+    installPhase = old.installPhase + "\n" + ''
+      cp memloader.bin $out/bin/memloader.bin
+    '';
+  });
+
   steam = super.steam.override {
     extraPkgs = pkgs: with pkgs; [ pango harfbuzz libthai ];
   };
