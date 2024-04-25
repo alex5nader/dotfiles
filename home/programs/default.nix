@@ -187,6 +187,7 @@
     sd
     du-dust
     unzip
+    zip
     bottom
 
     # programming
