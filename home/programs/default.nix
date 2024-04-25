@@ -216,6 +216,8 @@
     wireshark
     xorg.xhost
     tcpdump
+    heroku
+    flyway
 
     ldtk
     unstable.tracy

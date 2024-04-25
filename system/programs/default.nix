@@ -25,6 +25,15 @@
     jdk17 = pkgs.openjdk17;
   };
 
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_15;
+    authentication = ''
+      host all all 127.0.0.1/32 trust
+      host all all ::1/128      trust
+    '';
+  };
+
   # Block Steam from trying to connect to wifi
   # https://github.com/ValveSoftware/steam-for-linux/issues/7856#issuecomment-1327053152
   security.polkit.extraConfig = ''
