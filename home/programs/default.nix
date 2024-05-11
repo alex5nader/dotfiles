@@ -219,6 +219,7 @@
     tcpdump
     heroku
     flyway
+    opam # note: also has shell init config in shell.nix
 
     ldtk
     unstable.tracy
