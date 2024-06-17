@@ -7,6 +7,15 @@ self: super: {
     '';
   });
 
+  # https://discourse.nixos.org/t/disable-ssh-agent-from-gnome-keyring-on-gnome/28176/5
+  gnome = super.gnome.overrideScope' (gself: gsuper: {
+    gnome-keyring = gsuper.gnome-keyring.overrideAttrs (oldAttrs: {
+      configureFlags = oldAttrs.configureFlags or [] ++ [
+        "--disable-ssh-agent"
+      ];
+    });
+  });
+
   steam = super.steam.override {
     extraPkgs = pkgs: with pkgs; [ pango harfbuzz libthai ];
   };

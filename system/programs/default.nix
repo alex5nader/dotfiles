@@ -25,6 +25,8 @@
     jdk17 = pkgs.openjdk17;
   };
 
+  programs.nix-ld.enable = true;
+
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_15;

@@ -172,6 +172,7 @@
     # games
     prismlauncher
     mgba
+    melonDS
     warp-randomizer
     unstable.r2modman
     fusee-interfacee-tk
@@ -219,6 +220,10 @@
     tcpdump
     heroku
     flyway
+
+    # note: before creating opam switch for coq,
+    # must be in a nix shell with coq (and maybe coqide)
+    # otherwise, conf-gmp will fail to compile
     opam # note: also has shell init config in shell.nix
 
     ldtk

@@ -1,4 +1,4 @@
-{ config, mkIfDevice, lib, ... }:
+{ config, mkIfDevice, lib, pkgs, ... }:
 
 let
   inherit (lib) mkIf mkMerge;

@@ -13,6 +13,8 @@
     mozilla = {
       url = "github:mozilla/nixpkgs-mozilla";
     };
+
+    # TODO: add stylix?
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mozilla }:

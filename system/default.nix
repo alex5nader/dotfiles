@@ -11,6 +11,7 @@
     ./gnome.nix
     ./internet.nix
     ./kernel.nix
+    ./keyboard.nix
     ./localization.nix
     ./metadata.nix
     ./misc-hardware.nix
