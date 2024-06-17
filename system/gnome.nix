@@ -21,8 +21,8 @@ with lib;
       # };
 
       desktopManager.budgie.enable = true;
-      libinput.enable = true;
     };
+    services.libinput.enable = true;
 
     services.upower.enable = true; # Enable power display in panel
 

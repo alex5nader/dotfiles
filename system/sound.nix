@@ -6,17 +6,15 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+
+    extraConfig.pipewire = {
+      "99-no-bell" = {
+        "context.properties" = {
+          "module.x11.bell" = false;
+        };
+      };
+    };
   };
 
   hardware.pulseaudio.enable = false;
-
-  environment.etc = {
-    "pipewire/pipewire.conf.d/99-custom.conf".text = ''
-      {
-        "context.properties": {
-          "module.x11.bell": false 
-        }
-      }
-    '';
-  };
 }

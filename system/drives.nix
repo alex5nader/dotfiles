@@ -6,7 +6,9 @@ in
 
 mkMerge [
   {
-    boot.supportedFilesystems = ["ntfs"];
+    boot.supportedFilesystems = {
+      ntfs = true;
+    };
   }
 
   (mkIfDevice "laptop" {
