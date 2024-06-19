@@ -3,7 +3,6 @@
 {
   imports = [
     ./flameshot
-    ./neovim
 
     # ./splatnet2statink.nix
   ];
@@ -21,7 +20,7 @@
 
   programs.eza = {
     enable = true;
-    enableAliases = true;
+    enableFishIntegration = true;
   };
 
   programs.firefox.enable = true;
@@ -148,6 +147,13 @@
     ];
   };
 
+  programs.zellij = {
+    enable = true;
+    # Should set zellij as start command in terminal emulator
+    # This prevents other instances of fish (in IDE, etc) from automatically starting Zellij
+    enableFishIntegration = false;
+  };
+
   home.packages = with pkgs; with jetbrains; [
     # general use
     discord
@@ -168,6 +174,7 @@
     unstable.aseprite
     alsa-utils
     usbutils
+    xclip
 
     # games
     prismlauncher
@@ -220,6 +227,7 @@
     tcpdump
     heroku
     flyway
+    bacon
 
     # note: before creating opam switch for coq,
     # must be in a nix shell with coq (and maybe coqide)
