@@ -4,6 +4,7 @@
   imports = [
     ./flameshot
     ./wezterm
+    ./zellij
 
     # ./splatnet2statink.nix
   ];
@@ -146,13 +147,6 @@
         sha256 = "yv4Na4fWEiTvLYBqCdIpZ8V08jv72JOcMKbf932wUfg=";
       }
     ];
-  };
-
-  programs.zellij = {
-    enable = true;
-    # Should set zellij as start command in terminal emulator
-    # This prevents other instances of fish (in IDE, etc) from automatically starting Zellij
-    enableFishIntegration = false;
   };
 
   home.packages = with pkgs; with jetbrains; [

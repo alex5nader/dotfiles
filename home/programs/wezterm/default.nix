@@ -16,9 +16,6 @@ in
 
         local config = wezterm.config_builder()
 
-        config.default_prog = { "${getBin zellij}/bin/zellij" }
-        config.skip_close_confirmation_for_processes_named = { "zellij" }
-
         config.color_scheme = "nord"
         config.font = wezterm.font("monospace")
 

@@ -34,16 +34,8 @@ in
 
       config = {
         description = "Edit configuration files.";
-        argumentNames = [ "type" ];
         body = ''
-          switch $type
-            case system
-              ${config.programs.vscode.package}/bin/code ${config.home.homeDirectory}/Projects/system-config
-            case home
-              ${config.programs.vscode.package}/bin/code ${config.home.homeDirectory}/Projects/home-config
-            case '*'
-              echo "Must enter either 'system' or 'home'."
-          end
+          exec zellij -l config
         '';
       };
 
