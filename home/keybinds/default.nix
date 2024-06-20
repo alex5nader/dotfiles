@@ -1,10 +1,10 @@
-{ pkgs, lib, ... }:
+{ config, lib, ... }:
 
 with lib;
 with hm.gvariant;
 
 let
-  keybindings = import ./keybinds.nix pkgs;
+  keybindings = import ./keybinds.nix { inherit config lib; };
 
   getPath = keybinding: "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/" + keybinding.name;
 

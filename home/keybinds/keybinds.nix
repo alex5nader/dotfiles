@@ -1,14 +1,18 @@
-pkgs:
+{ config, lib }:
+
+let
+  inherit (lib.attrsets) getBin;
+in
 
 [
   {
     name = "open-terminal";
     binding = "<Super>Return";
-    command = "${pkgs.gnome.gnome-terminal}/bin/gnome-terminal";
+    command = "${getBin config.programs.wezterm.package}/bin/wezterm";
   }
   {
     name = "trigger-flameshot";
     binding = "<Super><Shift>s";
-    command = "${pkgs.flameshot}/bin/flameshot gui";
+    command = "${getBin config.services.flameshot.package}/bin/flameshot gui";
   }
 ]

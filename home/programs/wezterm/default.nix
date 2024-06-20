@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 let
   inherit (lib.attrsets) getBin;
@@ -12,14 +12,15 @@ in
     extraConfig =
       # lua
       ''
-        local wezterm = require 'wezterm'
+        local wezterm = require "wezterm"
 
         local config = wezterm.config_builder()
 
-        config.default_prog = { '${getBin zellij}/bin/zellij' }
+        config.default_prog = { "${getBin zellij}/bin/zellij" }
+        config.skip_close_confirmation_for_processes_named = { "zellij" }
 
-        config.color_scheme = 'nord'
-        config.font = wezterm.font('monospace')
+        config.color_scheme = "nord"
+        config.font = wezterm.font("monospace")
 
         config.enable_tab_bar = false
         config.window_decorations = "RESIZE"
