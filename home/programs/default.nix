@@ -3,6 +3,7 @@
 {
   imports = [
     ./flameshot
+    ./wezterm
 
     # ./splatnet2statink.nix
   ];
