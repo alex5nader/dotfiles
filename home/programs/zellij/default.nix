@@ -18,7 +18,10 @@
         	}
         	pane split_direction="vertical" {
         		pane command="hx"
-        		pane command="bacon" start_suspended=true
+        		pane command="bacon" {
+              name "bacon"
+              args "clippy"
+            }
         	}
         	pane size=2 borderless=true {
         		plugin location="status-bar"
