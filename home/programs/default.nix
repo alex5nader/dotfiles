@@ -3,6 +3,7 @@
 {
   imports = [
     ./flameshot
+    ./warp
     ./wezterm
     ./zellij
 
