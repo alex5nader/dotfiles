@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -25,6 +25,7 @@
     enable = true;
     enableFishIntegration = true;
   };
+  programs.fish.shellAliases.ls = lib.mkForce "eza --git-ignore";
 
   programs.firefox.enable = true;
 

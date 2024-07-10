@@ -1,0 +1,16 @@
+---
+name: Rust
+windows:
+  - tabs:
+      - layout:
+          split_direction: horizontal
+          panes:
+            - cwd: /home/noobstar/Projects/raytrace
+              commands:
+              - exec: bacon clippy
+            - split_direction: vertical
+              panes:
+                - cwd: /home/noobstar/Projects/raytrace
+                  commands:
+                  - exec: hx
+                - cwd: /home/noobstar/Projects/raytrace
