@@ -23,9 +23,15 @@
 
   programs.eza = {
     enable = true;
-    enableFishIntegration = true;
+    enableFishIntegration = false; # I prefer abbreviations instead of aliases
   };
-  programs.fish.shellAliases.ls = lib.mkForce "eza --git-ignore";
+  programs.fish.shellAbbrs = {
+    ls = "eza --git-ignore";
+    la = "eza -a";
+    ll = "eza -l";
+    lla = "eza -lla";
+    lt = "eza --tree";
+  };
 
   programs.firefox.enable = true;
 
@@ -113,6 +119,10 @@
       opnear4 = {
         hostname = "10.177.46.143";
         user = "opnear4";
+      };
+      openlab = {
+        hostname = "10.177.47.85";
+        user = "ash190005";
       };
       mininet = {
         hostname = "localhost";

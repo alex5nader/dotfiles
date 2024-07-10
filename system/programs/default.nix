@@ -15,7 +15,7 @@
   ];
 
   documentation.dev.enable = true;
-  documentation.man.generateCaches = true;
+  documentation.man.generateCaches = false;
 
   programs.gnupg.agent.enable = true; # TODO: missing pinentryFlavor = "gnome3" -- is this necessary?
   programs.steam.enable = true;
