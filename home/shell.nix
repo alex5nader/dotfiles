@@ -26,7 +26,6 @@ in
     enable = true;
     interactiveShellInit = ''
       any-nix-shell fish --info-right | source
-      source /home/noobstar/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
     '';
 
     functions = {

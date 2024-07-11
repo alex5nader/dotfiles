@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -7,159 +7,18 @@
     ./wezterm
     ./zellij
 
-    # ./splatnet2statink.nix
+    ./chromium.nix
+    ./direnv.nix
+    ./eza.nix
+    ./firefox.nix
+    ./git.nix
+    ./helix.nix
+    ./home-manager.nix
+    ./nix-index.nix
+    ./opam.nix
+    ./ssh.nix
+    ./vscode.nix
   ];
-
-
-  programs.chromium = {
-    enable = true;
-    package = pkgs.ungoogled-chromium;
-  };
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
-  programs.eza = {
-    enable = true;
-    enableFishIntegration = false; # I prefer abbreviations instead of aliases
-  };
-  programs.fish.shellAbbrs = {
-    ls = "eza --git-ignore";
-    la = "eza -a";
-    ll = "eza -l";
-    lla = "eza -lla";
-    lt = "eza --tree";
-  };
-
-  programs.firefox.enable = true;
-
-  programs.git = {
-    enable = true;
-
-    signing = {
-      key = null;
-      signByDefault = true;
-    };
-
-    userEmail = "contact@alexhabi.ch";
-    userName = "Alex Habich";
-
-    extraConfig = {
-      init.defaultBranch = "main";
-      core.editor = "nano";
-    };
-  };
-
-  programs.helix = {
-    enable = true;
-    settings = {
-      theme = "nord";
-      editor = {
-        line-number = "relative";
-        bufferline = "multiple";
-        cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
-      };
-      keys.normal = {
-        "H" = ":buffer-previous";
-        "L" = ":buffer-next";
-
-        "space" = {
-          "c" = ":buffer-close";
-          "q" = ":quit";
-          "w" = ":write";
-        };
-      };
-    };
-    languages = {
-      language = [
-        { name = "rust"; }
-        { name = "nix"; }
-      ];
-
-      language-server.nil = {
-        config = {
-          nil.formatting.command = ["${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"];
-        };
-      };
-    };
-  };
-
-  programs.home-manager.enable = true;
-
-  programs.nix-index = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  services.ssh-agent.enable = true;
-  programs.ssh = {
-    enable = true;
-    controlMaster = "auto";
-    controlPath = "~/.ssh/control-socket_%r@%n:%p";
-    controlPersist = "10m";
-    matchBlocks = {
-      cs1 = {
-        hostname = "cs1.utdallas.edu";
-        user = "ash190005";
-      };
-      cs2 = {
-        hostname = "cs2.utdallas.edu";
-        user = "ash190005";
-      };
-      opnear3 = {
-        hostname = "10.177.46.94";
-        user = "opnear3";
-      };
-      opnear4 = {
-        hostname = "10.177.46.143";
-        user = "opnear4";
-      };
-      openlab = {
-        hostname = "10.177.47.85";
-        user = "ash190005";
-      };
-      mininet = {
-        hostname = "localhost";
-        port = 8022;
-        user = "mininet";
-        forwardX11 = true;
-        forwardAgent = true;
-      };
-    };
-    extraConfig = ''
-      IPQoS=0x00
-    '';
-  };
-
-  programs.vscode = {
-    enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
-      arrterian.nix-env-selector
-      editorconfig.editorconfig
-      ms-vscode.cpptools
-      skyapps.fish-vscode
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "VerilogHDL";
-        publisher = "mshr-h";
-        version = "1.5.3";
-        sha256 = "1har7q0flqnx5q74nj3gn8l80aibmnn4xyscddbim5i5yqdx45g0";
-      }
-      {
-        name = "language-koka";
-        publisher = "koka";
-        version = "2.0.4";
-        sha256 = "yv4Na4fWEiTvLYBqCdIpZ8V08jv72JOcMKbf932wUfg=";
-      }
-    ];
-  };
 
   home.packages = with pkgs; with jetbrains; [
     # general use
@@ -182,6 +41,7 @@
     alsa-utils
     usbutils
     xclip
+    firefox-nightly-bin
 
     # games
     prismlauncher
@@ -235,11 +95,6 @@
     heroku
     flyway
     bacon
-
-    # note: before creating opam switch for coq,
-    # must be in a nix shell with coq (and maybe coqide)
-    # otherwise, conf-gmp will fail to compile
-    opam # note: also has shell init config in shell.nix
 
     ldtk
     unstable.tracy

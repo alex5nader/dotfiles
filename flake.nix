@@ -14,10 +14,14 @@
       url = "github:mozilla/nixpkgs-mozilla";
     };
 
+    firefox = {
+      url = "github:nix-community/flake-firefox-nightly";
+    };
+
     # TODO: add stylix?
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mozilla }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mozilla, firefox }:
     let
       system = "x86_64-linux";
 
@@ -27,6 +31,9 @@
         config.allowUnfree = true;
         overlays = [
           mozilla.overlay
+          (self: super: {
+            firefox-nightly-bin = firefox.packages.${system}.firefox-nightly-bin;
+          })
           (import ./my-pkgs/overlay.nix)
           (import ./overlay.nix { inherit nixpkgs-unstable; })
         ];
