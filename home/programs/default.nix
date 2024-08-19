@@ -96,6 +96,10 @@
     flyway
     bacon
 
+    # note: before creating opam switch for coq,
+    # enter devShells.buildCoq: nix develop .#buildCoq
+    opam # note: also has shell init config in shell.nix
+
     ldtk
     unstable.tracy
 

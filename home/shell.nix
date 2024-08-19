@@ -54,6 +54,27 @@ in
         type = "folder";
         prefix = "${config.home.homeDirectory}/Projects/osc";
       };
+
+      set-perf = {
+        description = "Set CPU scaling_governor";
+        argumentNames = [ "scaling_governor" ];
+        body = ''
+          set available (cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors | string split " ")
+
+          if test -z "$scaling_governor"
+            echo >&2 "Usage: set-perf <scaling_governor>"
+            echo >&2 "Use one of the following: $available"
+            return 1
+          end
+
+          if ! contains "$scaling_governor" $available
+            echo >&2 "Invalid scaling governor. Expected one of: $available"
+            return 1
+          end
+
+          echo "$scaling_governor" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+        '';
+      };
     };
   };
 

@@ -78,5 +78,12 @@
         "noobstar@noobstar-laptop" = laptop.home;
         "noobstar@noobstar-pc" = desktop.home;
       };
+
+      devShells.${system} = {
+        # whoever wrote this post i love you it just works:tm: https://www.reddit.com/r/Coq/comments/1d33a15/coq_nixos_setup/
+        buildCoq = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [ ocaml opam pkg-config gcc bintools-unwrapped gmp ];
+        };
+      };
     };
 }
