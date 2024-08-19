@@ -2,8 +2,7 @@
 
 {
   # note: before creating opam switch for coq,
-  # must be in a nix shell with coq (and maybe coqide)
-  # otherwise, conf-gmp will fail to compile
+  # enter devShells.buildCoq: nix develop .#buildCoq
   # this also breaks after collecting garbage :)
   home.packages = with pkgs; [ opam ];
 
