@@ -24,6 +24,7 @@
     jdk8 = pkgs.openjdk8;
     jdk11 = pkgs.openjdk11;
     jdk17 = pkgs.openjdk17;
+    jdk22 = pkgs.openjdk22;
   };
 
   programs.nix-ld.enable = true;
