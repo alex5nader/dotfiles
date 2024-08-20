@@ -44,6 +44,11 @@ mkMerge [
       };
   }
 
+  {
+    virtualisation.docker.enable = true;
+    users.users.noobstar.extraGroups = ["docker"];
+  }
+
   (mkIfDevice "desktop" {
     boot.kernelModules = [ "vfio-pci" ];
     boot.kernelParams = [ "iommu=pt" "amd_iommu=on" "rd.driver.pre=vfio-pc" ];

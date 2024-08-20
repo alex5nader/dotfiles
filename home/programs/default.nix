@@ -56,6 +56,7 @@
     peek
     vlc
     audacity
+    foliate
 
     # terminal
     fd
@@ -77,7 +78,7 @@
     rustup
     cargo-expand
     cargo-generate
-    python311
+    python312
     verilog
     logisim
     gnumake
