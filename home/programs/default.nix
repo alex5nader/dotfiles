@@ -43,6 +43,7 @@
     xclip
     firefox-nightly-bin
     zathura
+    ripgrep-all
 
     # games
     prismlauncher
