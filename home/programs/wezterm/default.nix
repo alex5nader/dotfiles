@@ -17,7 +17,9 @@ in
         local config = wezterm.config_builder()
 
         config.color_scheme = "nord"
-        config.font = wezterm.font("monospace")
+        config.font = wezterm.font("TT2020 Style E")
+        config.font_size = 16
+        config.line_height = 1.2
 
         config.enable_tab_bar = false
         config.window_decorations = "RESIZE"

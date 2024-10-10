@@ -7,6 +7,7 @@
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       ipafont # cjk
       twemoji-color-font
+      tt2020
     ];
 
     fontconfig.defaultFonts = {

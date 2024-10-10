@@ -42,6 +42,7 @@
     usbutils
     xclip
     firefox-nightly-bin
+    zathura
 
     # games
     prismlauncher
@@ -96,6 +97,10 @@
     heroku
     flyway
     bacon
+    unityhub
+    mono
+    gh
+    dotnet-sdk_8
 
     ldtk
     unstable.tracy
