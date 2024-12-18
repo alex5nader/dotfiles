@@ -35,7 +35,7 @@
       };
     };
     extraConfig = ''
-      IPQoS=0x00
+      IPQoS=none
     '';
   };
 

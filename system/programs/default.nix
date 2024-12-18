@@ -9,9 +9,9 @@
   environment.systemPackages = with pkgs; [
     git
 
-    man-pages man-pages-posix gnome.yelp
+    man-pages man-pages-posix yelp
 
-    pciutils glxinfo ripgrep gnome.gnome-tweaks file
+    pciutils glxinfo ripgrep gnome-tweaks file
   ];
 
   documentation.dev.enable = true;
@@ -25,7 +25,7 @@
     jdk11 = pkgs.openjdk11;
     jdk17 = pkgs.openjdk17;
     jdk21 = pkgs.openjdk21;
-    jdk22 = pkgs.openjdk22;
+    jdk23 = pkgs.openjdk23;
   };
 
   programs.nix-ld.enable = true;

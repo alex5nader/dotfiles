@@ -18,18 +18,18 @@ in
       jdk11 = mkJdk "11";
       jdk17 = mkJdk "17";
       jdk21 = mkJdk "21";
-      jdk22 = mkJdk "22";
+      jdk23 = mkJdk "23";
     };
   };
 
   config.environment = with cfg; {
-    systemPackages = [ jdk8 jdk11 jdk17 jdk21 jdk22 ];
+    systemPackages = [ jdk8 jdk11 jdk17 jdk21 jdk23 ];
     etc = {
       "jdk8".source = jdk8;
       "jdk11".source = jdk11;
       "jdk17".source = jdk17;
       "jdk21".source = jdk21;
-      "jdk22".source = jdk22;
+      "jdk23".source = jdk23;
     };
   };
 }

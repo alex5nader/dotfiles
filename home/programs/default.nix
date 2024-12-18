@@ -87,7 +87,7 @@
     racket
     sshfs
     bruno
-    nmap-unfree
+    nmap
     wireshark
     xorg.xhost
     tcpdump
@@ -108,7 +108,7 @@
 
     # admin
     arandr
-    gnome.dconf-editor
+    dconf-editor
   ] ++ (with python311Packages; [
     pip
     virtualenv
