@@ -39,6 +39,14 @@ in
         '';
       };
 
+      pid_name = ''
+        basename (readlink -f /proc/$argv[1]/exe)
+      '';
+
+      parent_pid = ''
+        cat /proc/$argv[1]/stat | cut -d' ' -f4
+      '';
+
       sch = makeNavigationFunction {
         type = "school";
         prefix = "${config.home.homeDirectory}/School";

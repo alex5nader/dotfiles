@@ -10,16 +10,28 @@
     "warp-terminal/launch_configurations/rust.yaml".source = ./launch_configs/rust.yaml;
   };
 
-  programs.fish.interactiveShellInit = ''
-    set -l parent (basename (readlink "/proc/$(cat /proc/$(echo $fish_pid)/stat|cut -d ' ' -f 4)/exe"))
+  programs.fish.functions = {
+    shell_parent = ''
+      set -l my_name (pid_name $fish_pid)
+      set -l parent (parent_pid $fish_pid)
 
-    if test "$parent" = warp
-      # Disable git pager
-      set -g -x GIT_PAGER
+      while test "$(pid_name $parent)" = "$my_name"
+        set parent (parent_pid $parent)
+      end
 
-      # Always warpify
-      printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish" }}\x9c'
-    end
-  '';
+      pid_name "$parent"
+    '';
+
+    warpify = ''
+      if test "$(shell_parent)" = warp
+        # Disable git pager
+        set -g -x GIT_PAGER
+
+        printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish" }}\x9c'
+      end
+    '';
+  };
+
+  programs.fish.interactiveShellInit = "warpify";
 }
 
