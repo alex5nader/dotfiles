@@ -20,6 +20,7 @@ in
 
   home.sessionVariables = {
     VIRSH_DEFAULT_CONNECT_URI = "qemu:///system";
+    LESS = "-R --mouse --wheel-lines=3";
   };
 
   programs.fish = {
