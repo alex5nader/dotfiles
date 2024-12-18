@@ -79,6 +79,7 @@
         "noobstar@noobstar-pc" = desktop.home;
       };
 
+      # To run these shells, use `nix develop sys#name`.
       devShells.${system} = {
         # whoever wrote this post i love you it just works:tm: https://www.reddit.com/r/Coq/comments/1d33a15/coq_nixos_setup/
         buildCoq = pkgs.mkShell {

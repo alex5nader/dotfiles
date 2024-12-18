@@ -2,7 +2,7 @@
 
 {
   # note: before creating opam switch for coq,
-  # enter devShells.buildCoq: nix develop .#buildCoq
+  # enter devShells.buildCoq: nix develop sys#buildCoq
   # this also breaks after collecting garbage :)
   home.packages = with pkgs; [ opam ];
 
