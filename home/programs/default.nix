@@ -51,6 +51,7 @@
     warp-randomizer
     unstable.r2modman
     fusee-interfacee-tk
+    mcaselector
 
     # media
     obs-studio
@@ -68,12 +69,7 @@
     bottom
 
     # programming
-    idea-ultimate
-    clion
-    webstorm
-    pycharm-professional
     jetbrains-toolbox
-    datagrip
     mongodb-compass
     gcc13
     rustup
