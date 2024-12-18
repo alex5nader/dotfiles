@@ -14,5 +14,7 @@
       init.defaultBranch = "main";
       core.editor = "nano";
     };
+
+    difftastic.enable = true;
   };
 }
