@@ -12,7 +12,7 @@
 
     fontconfig.defaultFonts = {
       sansSerif = [ "Inter" ];
-      monospace = [ "FiraCode Nerd Font Ret" ];
+      monospace = [ "FiraCode Nerd Font" ];
       emoji = [ "Twitter Color Emoji" ];
     };
   };
