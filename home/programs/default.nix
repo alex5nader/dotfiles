@@ -25,19 +25,11 @@
     discord
     yubioath-flutter
     obsidian
-    konversation
     libreoffice
-    signal-desktop
-    anki
-    unstable.electron-mail
     zoom-us
     qbittorrent
-    remmina
-    idevicerestore
-    libirecovery
     pandoc
     texlive.combined.scheme-full
-    unstable.aseprite
     alsa-utils
     usbutils
     xclip
@@ -71,35 +63,21 @@
 
     # programming
     jetbrains-toolbox
-    mongodb-compass
     gcc13
     rustup
     cargo-expand
     cargo-generate
     python312
-    verilog
-    logisim
     gnumake
-    nodePackages.node2nix
     nixpkgs-fmt
     nil
     cmake
-    racket
     sshfs
     bruno
     nmap
-    wireshark
-    xorg.xhost
-    tcpdump
-    heroku
-    flyway
     bacon
-    unityhub
-    mono
     gh
-    dotnet-sdk_8
 
-    ldtk
     unstable.tracy
 
     # theme
