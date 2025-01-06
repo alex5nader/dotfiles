@@ -77,6 +77,7 @@
     nmap
     bacon
     gh
+    renderdoc
 
     unstable.tracy
 
