@@ -13,6 +13,8 @@
     extraConfig = {
       init.defaultBranch = "main";
       core.editor = "nano";
+      push.autoSetupRemote = true;
+      push.default = "current";
     };
 
     difftastic.enable = true;
