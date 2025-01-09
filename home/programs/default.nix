@@ -7,6 +7,7 @@
     ./wezterm
     ./zellij
 
+    ./bacon.nix
     ./chromium.nix
     ./direnv.nix
     ./eza.nix
@@ -75,7 +76,6 @@
     sshfs
     bruno
     nmap
-    bacon
     gh
     renderdoc
 
