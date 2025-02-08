@@ -10,6 +10,7 @@
     ./fonts.nix
     ./gnome.nix
     ./internet.nix
+    ./jellyfin.nix
     ./kernel.nix
     ./keyboard.nix
     ./localization.nix
