@@ -15,6 +15,8 @@ mkMerge [
   })
 
   (mkIfDevice "desktop" {
+    boot.kernelPackages = pkgs.linuxPackages_6_12;
+  
     boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
     boot.initrd.kernelModules = [ "dm-snapshot" ];
     boot.kernelModules = [ "kvm-amd" ];
