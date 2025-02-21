@@ -46,6 +46,7 @@
     unstable.r2modman
     fusee-interfacee-tk
     mcaselector
+    icu # needed for stardew valley modding
 
     # media
     obs-studio
