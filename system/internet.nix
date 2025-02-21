@@ -1,7 +1,7 @@
 { mkIfDevice, lib, pkgs, ... }:
 
 let
-  inherit (lib) mkIf mkMerge;
+  inherit (lib) mkMerge;
 in
 
 mkMerge [
@@ -15,6 +15,8 @@ mkMerge [
     ];
 
     programs.mininet.enable = true;
+
+    services.tailscale.enable = true;
   }
 
   (mkIfDevice "laptop" {
