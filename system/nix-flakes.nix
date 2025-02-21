@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-
 {
   nix = {
-    package = pkgs.nixVersions.stable;
+    # package is now Lix, set by lix input
+
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
