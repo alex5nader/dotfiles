@@ -27,6 +27,9 @@ mkMerge [
   })
 
   (mkIfDevice "desktop" {
-    networking.interfaces.enp33s0.useDHCP = true;
+    networking.interfaces.enp33s0 = {
+      useDHCP = true;
+      wakeOnLan.enable = true;
+    };
   })
 ]
