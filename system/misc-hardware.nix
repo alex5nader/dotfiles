@@ -1,7 +1,7 @@
-{ config, mkIfDevice, lib, pkgs, ... }:
+{ mkIfDevice, lib, ... }:
 
 let
-  inherit (lib) mkIf mkMerge;
+  inherit (lib) mkMerge;
 in
 
 mkMerge [
@@ -13,10 +13,9 @@ mkMerge [
   }
 
   (mkIfDevice "laptop" {
+    # Framework config added in flake.nix via nixos-hardware
+  
     powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    # hardware.video.hidpi.enable = lib.mkDefault true; # TODO: verify whether anything broke
-    services.fprintd.enable = true;
   })
 ]
 

@@ -37,6 +37,9 @@
     firefox-nightly-bin
     zathura
     ripgrep-all
+    remmina
+    sweethome3d.application
+    bitwarden-desktop
 
     # games
     prismlauncher

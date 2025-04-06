@@ -1,12 +1,12 @@
 { mkIfDevice, lib, pkgs, ... }:
 
 let
-  inherit (lib) mkIf mkMerge;
+  inherit (lib) mkMerge;
 in
 
 mkMerge [
   (mkIfDevice "laptop" {
-    boot.kernelPackages = pkgs.linuxPackages_5_15;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
     boot.initrd.kernelModules = [ "dm-snapshot" ];

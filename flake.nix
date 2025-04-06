@@ -5,6 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,14 +21,18 @@
     };
 
     lix = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0-3.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: add stylix?
+    # stylix = {
+    #   url = "github:danth/stylix/release-24.11";
+    #   # TODO: does this break anything? docs didn't specify it
+    #   inputs.nixpkgs.follows = "nixpkgs";  
+    # };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mozilla, firefox, lix }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, mozilla, firefox, lix }:
     let
       system = "x86_64-linux";
 
@@ -45,7 +51,7 @@
         ];
       };
 
-      configuration = currentDevice:
+      configuration = currentDevice: extraNixosModules:
         let
           inherit (nixpkgs.lib) mkIf;
           mkIfDevice = device: value: mkIf (device == currentDevice) value;
@@ -54,25 +60,27 @@
           nixos = nixpkgs.lib.nixosSystem {
             system = null;
 
-            modules = [ ./system ];
+            modules = extraNixosModules ++ [
+              ./system
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.noobstar = ./home;
+                home-manager.extraSpecialArgs = {
+                  inherit mkIfDevice;
+                  my-jdks = nixos.config.programs.javaPackages;
+                };
+              }
+            ];
             specialArgs = {
               inherit pkgs mkIfDevice;
             };
           };
-
-          home = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-
-            modules = [ ./home ];
-            extraSpecialArgs = {
-              inherit mkIfDevice;
-              my-jdks = nixos.config.programs.javaPackages;
-            };
-          };
         };
 
-      laptop = configuration "laptop";
-      desktop = configuration "desktop";
+      laptop = configuration "laptop" [ nixos-hardware.nixosModules.framework-11th-gen-intel ];
+      desktop = configuration "desktop" [ ];
     in
     {
       nixosConfigurations = {

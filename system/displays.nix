@@ -5,13 +5,6 @@ let
 in
 
 mkMerge [
-  (mkIfDevice "laptop" {
-    services.xserver.desktopManager.budgie.extraGSettingsOverrides = ''
-      [org.gnome.desktop.interface]
-      text-scaling-factor = 1.5
-    '';
-  })
-
   (mkIfDevice "desktop" {
     boot.initrd.kernelModules = [ "amdgpu" ];
     services.xserver.videoDrivers = [ "amdgpu" ];

@@ -12,6 +12,7 @@
     man-pages man-pages-posix yelp
 
     pciutils glxinfo ripgrep gnome-tweaks file
+    dmidecode lshw
   ];
 
   documentation.dev.enable = true;

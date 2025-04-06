@@ -71,6 +71,11 @@ in
       workspaces-only-on-primary = false;
     };
 
+    "org/gnome/settings-daemon/plugins/power" = {
+      # Disables light-sensitive brightness
+      ambient-enabled = false;
+    };
+  
     "org/gnome/shell" = {
       # Enable extensions installed via environment.systemPackages
       disable-user-extensions = false;
