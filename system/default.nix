@@ -3,6 +3,7 @@
 {
   imports = [
     ./programs
+    ./stylix
 
     ./boot.nix
     ./displays.nix
@@ -20,8 +21,8 @@
     ./nix-flakes.nix
     ./nixpkgs.nix
     ./printing.nix
-    ./ssh.nix
     ./sound.nix
+    ./ssh.nix
     ./users.nix
     ./virtualisation.nix
   ];

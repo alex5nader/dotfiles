@@ -1,10 +1,3 @@
-{ config, lib, ... }:
-
-let
-  inherit (lib.attrsets) getBin;
-  zellij = config.programs.zellij.package;
-in
-
 {
   programs.wezterm = {
     enable = true;
@@ -18,9 +11,7 @@ in
 
         config.front_end = "WebGpu"
 
-        config.color_scheme = "nord"
         config.font = wezterm.font("TT2020 Style E")
-        config.font_size = 16
         config.line_height = 1.2
 
         config.enable_tab_bar = false

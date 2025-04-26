@@ -5,10 +5,6 @@ let
 in
 
 {
-  imports = [
-    ./terminal.nix
-  ];
-
   home.packages = extensions;
 
   dconf.settings = {
@@ -26,12 +22,7 @@ in
     "org/gnome/desktop/interface" = {
       # Disables annoying behaviour when moving mouse into corner of screen
       enable-hot-corners = false;
-
-      # Theming
-      gtk-theme = "Nordic-Polar";
-      font-name= "Inter 10";
-      document-font-name = "Inter 10";
-      monospace-font-name = "FiraCode Nerd Font 10";
+      icon-theme = "Papirus";
     };
 
     "org/gnome/desktop/sound" = {
@@ -51,10 +42,6 @@ in
       # Switch between workspaces like alt-tab
       switch-to-workspace-left = [ "<Shift><Super>Tab" ];
       switch-to-workspace-right = [ "<Super>Tab" ];
-    };
-
-    "org/gnome/desktop/wm/preferences" = {
-      titlebar-font = "Inter Bold 10";
     };
 
     "org/gnome/gnome-session" = {
@@ -90,10 +77,6 @@ in
             else throw "Extension ${extension} does not have .uuid or .passthru.extensionUuid";
         in
         map getUuid extensions;
-    };
-
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Nordic-Polar";
     };
   };
 }

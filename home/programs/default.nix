@@ -85,10 +85,6 @@
 
     unstable.tracy
 
-    # theme
-    nordic
-    papirus-icon-theme
-
     # admin
     arandr
     dconf-editor

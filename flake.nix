@@ -2,22 +2,13 @@
   description = "My device configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    firefox = {
+      url = "github:nix-community/flake-firefox-nightly";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    mozilla = {
-      url = "github:mozilla/nixpkgs-mozilla";
-    };
-
-    firefox = {
-      url = "github:nix-community/flake-firefox-nightly";
     };
 
     lix = {
@@ -25,14 +16,33 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # stylix = {
-    #   url = "github:danth/stylix/release-24.11";
-    #   # TODO: does this break anything? docs didn't specify it
-    #   inputs.nixpkgs.follows = "nixpkgs";  
-    # };
+    mozilla = {
+      url = "github:mozilla/nixpkgs-mozilla";
+    };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    stylix = {
+      url = "github:danth/stylix/release-24.11";
+      # TODO: does this break anything? docs didn't specify it
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, mozilla, firefox, lix }:
+  outputs =
+    { firefox
+    , home-manager
+    , lix
+    , mozilla
+    , nixos-hardware
+    , nixpkgs
+    , nixpkgs-unstable
+    , self
+    , stylix
+    }:
     let
       system = "x86_64-linux";
 
@@ -61,6 +71,7 @@
             system = null;
 
             modules = extraNixosModules ++ [
+              stylix.nixosModules.stylix
               ./system
               home-manager.nixosModules.home-manager
               {
