@@ -23,5 +23,25 @@
         sha256 = "yv4Na4fWEiTvLYBqCdIpZ8V08jv72JOcMKbf932wUfg=";
       }
     ];
+    userSettings = {
+      "[coq]" = {
+          "editor.indentSize" = "tabSize";
+          "editor.tabSize" = 2;
+      };
+      "coqtop.binPath" = "/home/noobstar/.opam/coq/bin";
+      "debug.onTaskErrors" = "abort";
+      "editor.fontLigatures" = true;
+      "editor.minimap.enabled" = false;
+      "editor.renderWhitespace" = "none";
+      "explorer.excludeGitIgnore" = true;
+      "files.associations" = {
+          "*.v" = "coq";
+      };
+      "files.autoSave" = "onFocusChange";
+      "mesonbuild.configureOnOpen" = true;
+      "terminal.integrated.stickyScroll.enabled" = true;
+      "vscoq.goals.maxDepth" = 10000;
+      "vscoq.path" = "/home/noobstar/.opam/coq/bin/vscoqtop";
+    };
   };
 }

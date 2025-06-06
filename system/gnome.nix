@@ -8,9 +8,10 @@ mkMerge [
   {
     services.xserver = {
       enable = true;
+      autorun = false;
 
       desktopManager.budgie.enable = true;
-
+      displayManager.startx.enable = true;
     };
     services.libinput.enable = true;
 

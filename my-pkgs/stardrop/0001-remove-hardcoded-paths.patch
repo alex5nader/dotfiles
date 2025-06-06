@@ -1,0 +1,46 @@
+diff --git a/Stardrop/Utilities/External/SMAPI.cs b/Stardrop/Utilities/External/SMAPI.cs
+index 37d49ef..a6571d8 100644
+--- a/Stardrop/Utilities/External/SMAPI.cs
++++ b/Stardrop/Utilities/External/SMAPI.cs
+@@ -27,7 +27,7 @@ namespace Stardrop.Utilities.External
+             var smapiInfo = new FileInfo(Pathing.GetSmapiPath());
+             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) is true)
+             {
+-                arguments = $"-c \"SMAPI_MODS_PATH='{Pathing.GetSelectedModsFolderPath()}' '{Pathing.GetSmapiPath().Replace("StardewModdingAPI.dll", "StardewValley")}'\"";
++                arguments = $"bash -c \"SMAPI_MODS_PATH='{Pathing.GetSelectedModsFolderPath()}' '{Pathing.GetSmapiPath().Replace("StardewModdingAPI.dll", "StardewValley")}'\"";
+             }
+             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) is true)
+             {
+@@ -37,7 +37,7 @@ namespace Stardrop.Utilities.External
+             Program.helper.Log($"Starting SMAPI with the following arguments: {arguments}");
+             var processInfo = new ProcessStartInfo
+             {
+-                FileName = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? smapiInfo.FullName : "/bin/bash",
++                FileName = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? smapiInfo.FullName : "steam-run",
+                 Arguments = arguments,
+                 WorkingDirectory = smapiInfo.DirectoryName,
+                 RedirectStandardOutput = false,
+diff --git a/Stardrop/Views/MainWindow.axaml.cs b/Stardrop/Views/MainWindow.axaml.cs
+index 5faebc0..fddf8bf 100644
+--- a/Stardrop/Views/MainWindow.axaml.cs
++++ b/Stardrop/Views/MainWindow.axaml.cs
+@@ -1328,8 +1328,8 @@ namespace Stardrop.Views
+                             string[] arguments = new string[] { $"chmod +x {scriptPath}", $"{scriptPath}" };
+                             var processInfo = new ProcessStartInfo
+                             {
+-                                FileName = "/bin/bash",
+-                                Arguments = $"-c \"{string.Join(" ; ", arguments)}\"",
++                                FileName = "steam-run",
++                                Arguments = $"bash -c \"{string.Join(" ; ", arguments)}\"",
+                                 CreateNoWindow = true,
+                                 UseShellExecute = false
+                             };
+@@ -2442,7 +2442,7 @@ namespace Stardrop.Views
+             // Prepare the process
+             var processInfo = new ProcessStartInfo
+             {
+-                FileName = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "cmd" : "/bin/bash",
++                FileName = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "cmd" : "bash",
+                 Arguments = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? $"/C {string.Join(" & ", arguments)}" : $"-c \"{string.Join(" ; ", arguments)}\"",
+                 RedirectStandardOutput = true,
+                 RedirectStandardError = true,

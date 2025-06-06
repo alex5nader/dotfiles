@@ -3,7 +3,10 @@
     ./gnome
     ./ime
     ./keybinds
+    ./niri
     ./programs
+    ./stylix
+    ./waybar
 
     ./file-manager.nix
     ./gradle.nix

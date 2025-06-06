@@ -5,6 +5,7 @@
     ./programs
     ./stylix
 
+    ./bluetooth.nix
     ./boot.nix
     ./displays.nix
     ./drives.nix
@@ -17,12 +18,14 @@
     ./localization.nix
     ./metadata.nix
     ./misc-hardware.nix
+    ./niri.nix
     ./nix-direnv.nix
     ./nix-flakes.nix
     ./nixpkgs.nix
     ./printing.nix
     ./sound.nix
     ./ssh.nix
+    ./thunderbolt.nix
     ./users.nix
     ./virtualisation.nix
   ];

@@ -1,7 +1,7 @@
 { mkIfDevice, lib, ... }:
 
 let
-  inherit (lib) mkIf mkMerge;
+  inherit (lib) mkMerge;
 in
 
 mkMerge [
@@ -14,7 +14,7 @@ mkMerge [
   })
   
   (mkIfDevice "desktop" {
-    time.timeZone = "America/Chicago";
+    time.timeZone = "America/Los_Angeles";
 
     i18n.defaultLocale = "en_US.UTF-8";
     services.xserver.xkb.layout = "us";

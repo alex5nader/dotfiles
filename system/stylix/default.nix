@@ -1,4 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, mkWhenDevice, ... }:
+
 {
   # TODO: keep track of this issue, dynamic theme would be nice
   # https://github.com/danth/stylix/issues/447
@@ -33,12 +34,14 @@
   stylix.cursor = {
     package = pkgs.nordic;
     name = "Nordic-cursors";
-    size = 64;
+    size = mkWhenDevice { "laptop" = 64; "desktop" = 32; };
   };
 
-  # needs to be enabled in dconf via home manager
-  # org/gnome/desktop/interface icon-theme
   environment.systemPackages = with pkgs; [
+    # needs to be enabled in dconf via home manager
+    # org/gnome/desktop/interface icon-theme
     papirus-icon-theme
+
+    swww
   ];
 }

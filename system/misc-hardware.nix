@@ -10,6 +10,8 @@ mkMerge [
     services.pcscd.enable = true;
 
     hardware.enableRedistributableFirmware = lib.mkDefault true;
+
+    services.fwupd.enable = true;
   }
 
   (mkIfDevice "laptop" {

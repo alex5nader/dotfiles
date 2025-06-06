@@ -25,11 +25,4 @@ mkMerge [
     # laptop wifi is slow unless powersave is disabled
     networking.networkmanager.wifi.powersave = false;
   })
-
-  (mkIfDevice "desktop" {
-    networking.interfaces.wlp11s0 = {
-      useDHCP = true;
-      wakeOnLan.enable = true;
-    };
-  })
 ]

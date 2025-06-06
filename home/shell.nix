@@ -47,10 +47,6 @@ in
         cat /proc/$argv[1]/stat | cut -d' ' -f4
       '';
 
-      sch = makeNavigationFunction {
-        type = "school";
-        prefix = "${config.home.homeDirectory}/School";
-      };
       proj = makeNavigationFunction {
         type = "project";
         prefix = "${config.home.homeDirectory}/Projects";
@@ -58,10 +54,6 @@ in
       docs = makeNavigationFunction {
         type = "folder";
         prefix = "${config.home.homeDirectory}/Documents";
-      };
-      osc = makeNavigationFunction {
-        type = "folder";
-        prefix = "${config.home.homeDirectory}/Projects/osc";
       };
 
       set-perf = {
@@ -88,4 +80,14 @@ in
   };
 
   programs.starship.enable = true; # TODO: why don't I need enableFishIntegration? does any-nix-shell cover it somehow?
+
+  home.file = {
+    proj-completions = {
+      target = ".config/fish/completions/proj.fish";
+      text = ''
+        set -l projects "(basename -a ${config.home.homeDirectory}/Projects/*)"
+        complete -c proj -f -a $projects
+      '';
+    };
+  };
 }

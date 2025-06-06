@@ -40,6 +40,8 @@
     remmina
     sweethome3d.application
     bitwarden-desktop
+    pinta
+    xsel
 
     # games
     prismlauncher
@@ -50,6 +52,7 @@
     fusee-interfacee-tk
     mcaselector
     icu # needed for stardew valley modding
+    stardrop
 
     # media
     obs-studio

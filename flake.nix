@@ -20,6 +20,11 @@
       url = "github:mozilla/nixpkgs-mozilla";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -37,6 +42,7 @@
     , home-manager
     , lix
     , mozilla
+    , niri
     , nixos-hardware
     , nixpkgs
     , nixpkgs-unstable
@@ -58,19 +64,23 @@
           (import ./my-pkgs/overlay.nix)
           (import ./overlay.nix { inherit nixpkgs-unstable; })
           lix.overlays.default
+          niri.overlays.niri
         ];
       };
 
       configuration = currentDevice: extraNixosModules:
         let
-          inherit (nixpkgs.lib) mkIf;
+          inherit (nixpkgs.lib) mkIf mkMerge;
+          inherit (nixpkgs.lib.attrsets) foldlAttrs;
           mkIfDevice = device: value: mkIf (device == currentDevice) value;
+          mkWhenDevice = cases: mkMerge (foldlAttrs (acc: device: value: [(mkIfDevice device value)] ++ acc) [] cases);
         in
         rec {
           nixos = nixpkgs.lib.nixosSystem {
             system = null;
 
             modules = extraNixosModules ++ [
+              niri.nixosModules.niri
               stylix.nixosModules.stylix
               ./system
               home-manager.nixosModules.home-manager
@@ -79,13 +89,13 @@
                 home-manager.useUserPackages = true;
                 home-manager.users.noobstar = ./home;
                 home-manager.extraSpecialArgs = {
-                  inherit mkIfDevice;
+                  inherit mkIfDevice mkWhenDevice;
                   my-jdks = nixos.config.programs.javaPackages;
                 };
               }
             ];
             specialArgs = {
-              inherit pkgs mkIfDevice;
+              inherit pkgs mkIfDevice mkWhenDevice;
             };
           };
         };
@@ -97,11 +107,6 @@
       nixosConfigurations = {
         noobstar-laptop = laptop.nixos;
         noobstar-pc = desktop.nixos;
-      };
-
-      homeConfigurations = {
-        "noobstar@noobstar-laptop" = laptop.home;
-        "noobstar@noobstar-pc" = desktop.home;
       };
 
       # To run these shells, use `nix develop sys#name`.
