@@ -7,6 +7,8 @@
   boot.loader.grub.gfxmodeEfi = "2560x720";
   boot.loader.grub.gfxmodeBios = "2560x720";
 
+  boot.loader.systemd-boot.memtest86.enable = true;
+
   boot.plymouth = {
     enable = true;
   };

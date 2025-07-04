@@ -25,9 +25,7 @@
     ./printing.nix
     ./sound.nix
     ./ssh.nix
-    ./thunderbolt.nix
     ./users.nix
-    ./virtualisation.nix
   ];
 }
 
