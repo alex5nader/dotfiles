@@ -21,7 +21,7 @@
     ./niri.nix
     ./nix-direnv.nix
     ./nix-flakes.nix
-    ./nixpkgs.nix
+    # ./nixpkgs.nix
     ./printing.nix
     ./sound.nix
     ./ssh.nix

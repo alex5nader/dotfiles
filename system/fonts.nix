@@ -4,7 +4,7 @@
   fonts = {
     packages = with pkgs; [
       inter
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      nerd-fonts.fira-code
       ipafont # cjk
       twemoji-color-font
       tt2020

@@ -1,12 +1,4 @@
-{ pkgs, lib, ... }:
-
-let
-  extensions = import ./extensions.nix pkgs;
-in
-
 {
-  home.packages = extensions;
-
   dconf.settings = {
     "com/solus-project/budgie-panel" = {
       # Fix yellow background on some panel elements
@@ -61,22 +53,6 @@ in
     "org/gnome/settings-daemon/plugins/power" = {
       # Disables light-sensitive brightness
       ambient-enabled = false;
-    };
-  
-    "org/gnome/shell" = {
-      # Enable extensions installed via environment.systemPackages
-      disable-user-extensions = false;
-      enabled-extensions =
-        let
-          inherit (lib.lists) map;
-          getUuid = extension:
-            if extension ? uuid
-            then extension.uuid
-            else if extension.passthru ? extensionUuid
-            then extension.passthru.extensionUuid
-            else throw "Extension ${extension} does not have .uuid or .passthru.extensionUuid";
-        in
-        map getUuid extensions;
     };
   };
 }

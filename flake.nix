@@ -7,12 +7,12 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     lix = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0-3.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,11 +27,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:nix-community/stylix/release-25.05";
       # TODO: does this break anything? docs didn't specify it
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -80,6 +80,8 @@
             system = null;
 
             modules = extraNixosModules ++ [
+              { nixpkgs.pkgs = pkgs; }
+              nixpkgs.nixosModules.readOnlyPkgs
               niri.nixosModules.niri
               stylix.nixosModules.stylix
               ./system
@@ -95,7 +97,7 @@
               }
             ];
             specialArgs = {
-              inherit pkgs mkIfDevice mkWhenDevice;
+              inherit mkIfDevice mkWhenDevice;
             };
           };
         };

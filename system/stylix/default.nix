@@ -4,6 +4,7 @@
   # TODO: keep track of this issue, dynamic theme would be nice
   # https://github.com/danth/stylix/issues/447
   stylix.enable = true;
+  stylix.overlays.enable = false;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
   stylix.image = ./wallpaper.png;
 
@@ -13,7 +14,7 @@
       name = "Inter";
     };
     monospace = {
-      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+      package = pkgs.nerd-fonts.fira-code;
       name = "FiraCode Nerd Font";
     };
     emoji = {
