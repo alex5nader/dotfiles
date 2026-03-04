@@ -35,6 +35,13 @@
           nil.formatting.command = ["${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"];
         };
       };
+
+      language-server.tinymist = {
+        config = {
+          tinymist.preview.browsing.args = ["--data-plane-host=127.0.0.1:0" "--invert-colors=always" "--open"];
+          # tinymist.preview.backround.enabled = true;
+        };
+      };
     };
   };
 }

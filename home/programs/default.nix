@@ -42,6 +42,10 @@
     bitwarden-desktop
     pinta
     xsel
+    jq
+    krita
+    typst
+    tinymist
 
     # games
     prismlauncher
@@ -53,6 +57,8 @@
     mcaselector
     icu # needed for stardew valley modding
     stardrop
+    gamescope
+    protontricks
 
     # media
     obs-studio

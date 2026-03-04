@@ -5,7 +5,9 @@
     "Mod+Space".action = spawn "fuzzel";
     "Mod+Return".action = spawn "wezterm";
 
-    "Mod+Shift+S".action = screenshot;
+    "Mod+Shift+S".action.screenshot = {};
+
+    "Mod+Shift+F".action = toggle-window-floating;
 
     "Alt+Tab".action = toggle-overview;
     "Mod+F11".action = fullscreen-window;
