@@ -1,5 +1,5 @@
 { buildDotnetModule, fetchFromGitHub
-, copyDesktopItems, imagemagick, unzip, wrapGAppsHook, zip
+, copyDesktopItems, imagemagick, unzip, wrapGAppsHook3, zip
 , gtk3, libGL, xorg
 , makeDesktopItem
 }:
@@ -20,7 +20,7 @@ buildDotnetModule rec {
   selfContainedBuild = true;
 
   nativeBuildInputs = [
-    copyDesktopItems wrapGAppsHook 
+    copyDesktopItems wrapGAppsHook3 
     imagemagick unzip zip
   ];
   runtimeDeps = [

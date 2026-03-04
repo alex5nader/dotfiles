@@ -7,12 +7,12 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     lix = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-2.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,11 +27,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     stylix = {
-      url = "github:nix-community/stylix/release-25.05";
+      url = "github:nix-community/stylix/release-25.11";
       # TODO: does this break anything? docs didn't specify it
       inputs.nixpkgs.follows = "nixpkgs";
     };

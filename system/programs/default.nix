@@ -11,7 +11,7 @@
 
     man-pages man-pages-posix yelp
 
-    pciutils glxinfo ripgrep gnome-tweaks file
+    pciutils mesa-demos ripgrep gnome-tweaks file
     dmidecode lshw
   ];
 
@@ -26,7 +26,7 @@
     jdk11 = pkgs.openjdk11;
     jdk17 = pkgs.openjdk17;
     jdk21 = pkgs.openjdk21;
-    jdk23 = pkgs.openjdk23;
+    jdk25 = pkgs.openjdk25;
   };
 
   programs.nix-ld.enable = true;

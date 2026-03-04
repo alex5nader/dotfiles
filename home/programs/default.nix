@@ -70,7 +70,7 @@
     # terminal
     fd
     sd
-    du-dust
+    dust
     unzip
     zip
     bottom

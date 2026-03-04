@@ -19,7 +19,7 @@ self: super: {
   };
   
   unstable = import nixpkgs-unstable {
-    system = self.system;
+    system = self.stdenv.hostPlatform.system;
 
     config.allowUnfree = true;
   };

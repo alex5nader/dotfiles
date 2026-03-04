@@ -7,16 +7,19 @@
       signByDefault = true;
     };
 
-    userEmail = "contact@alexhabi.ch";
-    userName = "Alex Habich";
+    settings = {
+      user.email = "contact@alexhabi.ch";
+      user.name = "Alex Habich";
 
-    extraConfig = {
       init.defaultBranch = "main";
-      core.editor = "nano";
+      core.editor = "hx";
       push.autoSetupRemote = true;
       push.default = "current";
     };
+  };
 
-    difftastic.enable = true;
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
   };
 }

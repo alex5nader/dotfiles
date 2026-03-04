@@ -1,4 +1,4 @@
-{ mkIfDevice, lib, pkgs, ... }:
+{ mkIfDevice, lib, ... }:
 
 let
   inherit (lib) mkMerge;
@@ -7,14 +7,6 @@ in
 mkMerge [
   {
     networking.useDHCP = false;
-
-    services.globalprotect.enable = true;
-
-    environment.systemPackages = with pkgs; [
-      globalprotect-openconnect
-    ];
-
-    programs.mininet.enable = true;
 
     services.tailscale.enable = true;
   }
